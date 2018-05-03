@@ -6,7 +6,6 @@ package com.example.lorcan.palo;
 
 public class User {
     private String email;
-    private String test;
     //private String password;
     private String name;
     //private Double lat;
