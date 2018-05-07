@@ -95,6 +95,8 @@ public class UpdateMapFragmentLoadTask extends Fragment {
 
     public void handleResponse(String response) throws JSONException {
 
+        System.out.println("Response UpdateMap: " + response);
+
         ArrayList<String> args = new ArrayList<>();
 
 
@@ -113,6 +115,9 @@ public class UpdateMapFragmentLoadTask extends Fragment {
             args.add(jObjStatus.getString("Nickname"));
             args.add(jObjStatus.getString("Marker"));
 
+
+            System.out.println("PUNKTE: " + jObjStatus.getString("Punkte"));
+
             LevelPointsConverter levelPointsConverter = new LevelPointsConverter();
             int points = Integer.parseInt(jObjStatus.getString("Punkte"));
             args.add(levelPointsConverter.convertPointsToLevel(points));
@@ -122,11 +127,6 @@ public class UpdateMapFragmentLoadTask extends Fragment {
         }
 
         bundle1.putStringArrayList("args", args);
-
-        System.out.println("ARGS IN UPDATEMAPFRAGTASK: " + args);
-
-
-
 
         updateMapFragment.setData(bundle1);
 

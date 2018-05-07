@@ -174,6 +174,7 @@ public class StartActivity extends AppCompatActivity {
         }
 
         if (!versionDB.equals(version)) {
+
             builder.setTitle("Info")
                     .setMessage("Version " + versionDB + "ist nun da. Lade dir die neue Version herunter um alle Features weiterhin nutzen zu können.")
                     .setPositiveButton("OK!", new DialogInterface.OnClickListener() {
