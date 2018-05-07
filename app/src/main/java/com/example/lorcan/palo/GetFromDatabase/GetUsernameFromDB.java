@@ -15,6 +15,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.lorcan.palo.Fragments.ProfileFragment;
 import com.example.lorcan.palo.MainActivity;
 import com.example.lorcan.palo.MyApplicationContext;
+import com.example.lorcan.palo.UsernameJSON;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -107,6 +108,8 @@ public class GetUsernameFromDB {
 
     private void handleResponseProfile(String response) {
         getUsernameAsyncTask.cancel(true);
-        tvUsername.setText(response);
+        tvUsername.setText(response.trim());
+        UsernameJSON usernameJSON = new UsernameJSON();
+        usernameJSON.setUserName(response.trim());
     }
 }

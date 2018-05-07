@@ -1,3 +1,5 @@
+
+
 package com.example.lorcan.palo;
 
 import android.content.Intent;
@@ -35,10 +37,13 @@ public class ProfilActivity extends AppCompatActivity {
 
     String name;
     public int points;
+    public String lvl;
 
     Point size = new Point();
     int width = size.x;
     int height = size.y;
+    RelativeLayout progressBarBox;
+    TextView txtView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,9 +60,8 @@ public class ProfilActivity extends AppCompatActivity {
         GetProfilInfoFromDB getProfilInfoFromDB = new GetProfilInfoFromDB();
         getProfilInfoFromDB.getInfo(ProfilActivity.this, name);
 
-        GetPointsDB getPointsDB = new GetPointsDB();
-        points = getPointsDB.getPoints(name);
-        System.out.println(points);
+        progressBarBox = new RelativeLayout(this);
+        txtView = new TextView(this);
 
         display.getSize(size);
         width = size.x;
@@ -78,6 +82,11 @@ public class ProfilActivity extends AppCompatActivity {
         layoutImageView.addRule(RelativeLayout.CENTER_HORIZONTAL);
         ivImage.setLayoutParams(layoutImageView);
         String image = list.get(0);
+
+        GetPointsDB getPointsDB = new GetPointsDB();
+        getPointsDB.getPoints(this, name);
+
+
         if(image != null && image.length() > 0) {
 
 
@@ -213,15 +222,15 @@ public class ProfilActivity extends AppCompatActivity {
         }
 
 
-        LevelPointsConverter levelPointsConverter = new LevelPointsConverter();
-        String lvl = levelPointsConverter.convertPointsToLevel(points);
-        TextView txtView = new TextView(this);
-        txtView.setText("  P: " + points);
+
+
+
+
         txtView.setPadding(0,8, 0, 0);
         txtView.setTextColor(Color.WHITE);
 
 
-        RelativeLayout progressBarBox = new RelativeLayout(this);
+
         RelativeLayout.LayoutParams progressBarBoxLayout = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, 90);
         progressBarBox.setBackgroundColor(Color.LTGRAY);
         progressBarBoxLayout.setMargins(0, 450, 0, 0);
@@ -229,19 +238,17 @@ public class ProfilActivity extends AppCompatActivity {
         progressBarBox.setPadding(5, 5, 5, 5);
         progressBarBox.setLayoutParams(progressBarBoxLayout);
 
-        int progress = Integer.parseInt(lvl) * ((width-10)/10);
-        RelativeLayout progressBar = new RelativeLayout(this);
-        RelativeLayout.LayoutParams progressBarLayout = new RelativeLayout.LayoutParams(progress, 80);
-        progressBar.setBackgroundColor(getResources().getColor(R.color.hhu_blue));
-        progressBar.setLayoutParams(progressBarLayout);
+
+
+
+
 
 
 
 
         //----------------
         scrollView.addView(linearLayout);
-        progressBarBox.addView(progressBar);
-        progressBarBox.addView(txtView);
+
 
         //---------------
 
@@ -253,4 +260,21 @@ public class ProfilActivity extends AppCompatActivity {
 
     }
 
+    public void setPointsAndWidth(String pointsStr){
+        pointsStr = pointsStr.trim();
+        points = Integer.parseInt(pointsStr);
+        txtView.setText(String.valueOf("   P: " + points));
+        LevelPointsConverter levelPointsConverter = new LevelPointsConverter();
+        lvl = levelPointsConverter.convertPointsToLevel(points);
+        int progress = Integer.parseInt(lvl) * ((width-10)/10);
+        RelativeLayout progressBar = new RelativeLayout(this);
+        RelativeLayout.LayoutParams progressBarLayout = new RelativeLayout.LayoutParams(progress, 80);
+        progressBar.setBackgroundColor(getResources().getColor(R.color.hhu_blue));
+        progressBar.setLayoutParams(progressBarLayout);
+        progressBarBox.addView(progressBar);
+        progressBarBox.addView(txtView);
+
+    }
+
 }
+

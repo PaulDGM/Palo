@@ -3,6 +3,8 @@ package com.example.lorcan.palo;
 import android.content.Context;
 import android.util.Log;
 
+import com.example.lorcan.palo.GetFromDatabase.GetUsernameFromDB;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -69,11 +71,15 @@ public class UsernameJSON {
         String old = getData(MyApplicationContext.getAppContext());
         String username = "";
         try {
-            JSONObject jsonObject =  new JSONObject(old);
-
-            JSONArray jsonArray = jsonObject.getJSONArray("Name");
-
-            username = jsonArray.get(0).toString();
+            if(old == null){
+                GetUsernameFromDB getUsernameFromDB = new GetUsernameFromDB();
+                username = getUsernameFromDB.getName();
+                setUserName(username);
+            }else{
+                JSONObject jsonObject =  new JSONObject(old);
+                JSONArray jsonArray = jsonObject.getJSONArray("Name");
+                username = jsonArray.get(0).toString();
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }

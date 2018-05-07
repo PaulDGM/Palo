@@ -69,6 +69,13 @@ public class ChatActivity extends AppCompatActivity {
             public void onClick(View v) {
                 OnClickSendToDB onClickSendToDB = new OnClickSendToDB();
                 onClickSendToDB.sendBtnClick(android_id, "5");
+                //---- add Points +1 ----
+
+                PunkteJSON punkteJSON = new PunkteJSON();
+                int points = punkteJSON.getPoints();
+                punkteJSON.setPoints(points + 1);
+
+                //-----------------------
                 Intent intent = new Intent(ChatActivity.this, ProfilActivity.class);
                 intent.putExtra("name", name);
                 startActivity(intent);

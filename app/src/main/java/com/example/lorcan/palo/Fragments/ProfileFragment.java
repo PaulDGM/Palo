@@ -1,3 +1,5 @@
+
+
 package com.example.lorcan.palo.Fragments;
 
 
@@ -198,6 +200,7 @@ public class ProfileFragment extends Fragment {
         iconListBtn = (FloatingActionButton) view.findViewById(R.id.iconList);
 
 
+
         fab_marker1 = (ImageButton) view.findViewById(R.id.fab_marker1);
         fab_marker2 = (ImageButton) view.findViewById(R.id.fab_marker2);
         fab_marker3 = (ImageButton) view.findViewById(R.id.fab_marker3);
@@ -229,8 +232,8 @@ public class ProfileFragment extends Fragment {
         time = dateFormat.format(date);
 
 
-        UsernameJSON usernameJSON = new UsernameJSON();
-        final String name = usernameJSON.getUserName();
+        final UsernameJSON usernameJSON1 = new UsernameJSON();
+        final String name = usernameJSON1.getUserName();
         tvUsername.setText(name);
 
         // Receive status from database.
@@ -239,6 +242,9 @@ public class ProfileFragment extends Fragment {
 
         GetEncodedImageFromDB getEncodedImageFromDB = new GetEncodedImageFromDB();
         getEncodedImageFromDB.getResponseEncodedImage(android_id, this);
+
+        GetUsernameFromDB getUsernameFromDB = new GetUsernameFromDB();
+        getUsernameFromDB.getUsernameFromDB(android_id, this, tvUsername);
 
         fabImageDialog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -271,7 +277,6 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MyApplicationContext.getAppContext(), ProfilActivity.class);
-
                 intent.putExtra("name", name);
                 startActivity(intent);
             }
@@ -602,8 +607,8 @@ public class ProfileFragment extends Fragment {
                 }
             });
         }
-            return view;
-        }
+        return view;
+    }
 
 
     @Override
@@ -642,29 +647,11 @@ public class ProfileFragment extends Fragment {
     public void setEncodedImageAsProfileImage(String image) {
         OnClickSendToDB onClickSendToDB = new OnClickSendToDB();
         onClickSendToDB.sendBtnClick(android_id, "6");
-/*
-        SQLiteData insertPhoto = new SQLiteData("photo");
-        int cnt = insertPhoto.getClicks();
-        if(cnt == 0){
-            insertPhoto.setClicks(1);
-            insertPhoto.setId("photo");
-        }else{
-            insertPhoto.setClicks(cnt+1);
-        }
 
-*/
-        JSONClicks jsonClicks = new JSONClicks();
-        jsonClicks.addNewClick(5);
-        for(int i=0; i<20; i++){
-            System.out.println("CLICK PHOTO: " + jsonClicks.getClickDataByIndex(i) + " = "+ i);
+        PunkteJSON punkteJSON = new PunkteJSON();
+        int points = punkteJSON.getPoints();
+        punkteJSON.setPoints(points + 1);
 
-        }
-
-        if(jsonClicks.getClickDataByIndex(4) >= 1){
-            System.out.println("SENDICON!!!");
-            SendIconToDB sendIconToDB = new SendIconToDB();
-            sendIconToDB.sendIcon("5", android_id);
-        }
         try {
             if (image.length() > 0) {
                 byte[] decodedString = Base64.decode(image, Base64.DEFAULT);
@@ -684,7 +671,9 @@ public class ProfileFragment extends Fragment {
     }
 
     public void btnChangeClicked() {
-
+        PunkteJSON punkteJSON = new PunkteJSON();
+        int points = punkteJSON.getPoints();
+        punkteJSON.setPoints(points + 1);
         System.out.println("btnChange Clicked");
         OnClickSendToDB onClickSendToDB = new OnClickSendToDB();
         onClickSendToDB.sendBtnClick(android_id, "1");
@@ -943,3 +932,5 @@ public class ProfileFragment extends Fragment {
         });
     }
 }
+
+ 

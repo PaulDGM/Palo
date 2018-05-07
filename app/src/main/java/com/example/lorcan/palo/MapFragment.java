@@ -217,6 +217,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
 
 
                     sendStatusToDB statusToDB = new sendStatusToDB();
+
+                    //---- add Points +1 ----
+
+                    PunkteJSON punkteJSON = new PunkteJSON();
+                    int points = punkteJSON.getPoints();
+                    punkteJSON.setPoints(points + 1);
+
+                    //-----------------------
                     DateFormat dateFormat = new SimpleDateFormat("HH:mm");
                     Date date = new Date();
                     String time = dateFormat.format(date);
@@ -399,6 +407,15 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
                     JSONChatDB jsonChatDB = new JSONChatDB();
                     jsonChatDB.addNewChatUser(name.toString());
                     user.setName(name.toString());
+
+                    //---- add Points +1 ----
+
+                    PunkteJSON punkteJSON = new PunkteJSON();
+                    int points = punkteJSON.getPoints();
+                    punkteJSON.setPoints(points + 1);
+
+                    //-----------------------
+
                     bundle.putString("name", name.toString());
                     intent.putExtra("name", name.toString());
                     startActivity(intent);

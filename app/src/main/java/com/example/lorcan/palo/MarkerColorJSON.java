@@ -69,6 +69,10 @@ public class MarkerColorJSON {
         String old = getData(MyApplicationContext.getAppContext());
         int markerColor = 0;
         try {
+            if(old == null){
+                createNewDBDeleteOld("{ \"Color\" : ['1']}");
+                old = getData(MyApplicationContext.getAppContext());
+            }
             JSONObject jsonObject =  new JSONObject(old);
 
             JSONArray jsonArray = jsonObject.getJSONArray("Color");
