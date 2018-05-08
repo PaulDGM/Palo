@@ -21,6 +21,33 @@ public class SendIconToDB {
 
     }
 
+    /*
+    ICONS SETTING
+
+    INDEX SET KIND OF ICON
+
+    1 = Patient Zero - Registriere dich bei Palo während der ersten Testphase
+    2 = Pic Yourself! - Lade ein Profilfoto hoch
+    3 = Profile Poster - Poste deinen ersten Status aus dem Profil
+    4 = Poster - Poste deinen ersten Status aus der Karte
+    5 = Sophisticated Poster - Poste einen Status aus deinem Profil und direkt aus der Karte
+    6 = Old but Gold = Pposte einen alten Status erneut
+    7 = Color Changer - Ändere die Marker Farbe
+    8 = Color Picker - Poste einen Status in allen 10 Farben
+    9 = Nightowl - Poste einen Status nach 3 Uhr nachts bis 5 Uhr morgens
+    10 = Poste 10 Status an einem Tag
+    11 = Poste zwei Status hintereinander, die mindestens 20km auseinander liegen
+    12 = Poste zwei Status hintereinander, die mindestens 100km auseinander liegen
+    13 = Poste zwei Status hintereinander, die mindestens 1000km auseinander liegen
+    14 = Perfekt week - Poste eine Woche lang mindestens einen Status pro Tag
+    15 = Perfect month - Poste einen Monat lang mindestens einen Status pro Tag
+    16 = Marker clicker - Klicke zehn Marker von anderen Palo Usern
+    17 = Profile Viewer - Öffne das Profil von fünf anderen Palo-Usern
+    18 = Halfway done - Erreiche Lvl 5
+    19 = Finisher - Erreiche Lvl 10
+
+
+     */
 
 
     public void sendIcon(final String iconNum, final String android_id) {

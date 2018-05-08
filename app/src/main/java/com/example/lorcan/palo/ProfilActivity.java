@@ -94,7 +94,7 @@ public class ProfilActivity extends AppCompatActivity {
             Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
             ivImage.setRotation(90);
             ivImage.setImageBitmap(Bitmap.createScaledBitmap(decodedByte, 400, 400, false));
-            ivImage.setBackground(getDrawable(R.drawable.layout_bg));
+            ivImage.setBackground(getResources().getDrawable(R.drawable.layout_bg));
         }else{
             Toast.makeText(MyApplicationContext.getAppContext(), "Es ist leider kein Profilbild vorhanden.", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(MyApplicationContext.getAppContext(), ChatListActivity.class);
@@ -266,7 +266,50 @@ public class ProfilActivity extends AppCompatActivity {
         txtView.setText(String.valueOf("   P: " + points));
         LevelPointsConverter levelPointsConverter = new LevelPointsConverter();
         lvl = levelPointsConverter.convertPointsToLevel(points);
-        int progress = Integer.parseInt(lvl) * ((width-10)/10);
+        int x = 0;
+        int y = 0;
+        if(lvl == "1"){
+            x = 1;
+            y = 0;
+        }
+        if(lvl == "2"){
+            //1-9
+            x = 9;
+            y = 0;
+        }if(lvl == "3"){
+            //10-24
+            x = 15;
+            y = 9;
+        }if(lvl == "4"){
+            //25-49
+            x = 25;
+            y = 24;
+        }if(lvl == "5"){
+            //50-99
+            x = 50;
+            y = 49;
+        }if(lvl == "6"){
+            //100-199
+            x = 100;
+            y = 99;
+        }if(lvl == "7"){
+            //200-499
+            x = 300;
+            y = 199;
+        }if(lvl == "8"){
+            //500-999
+            x = 500;
+            y = 499;
+        }if(lvl == "9"){
+            //1000-1999
+            x = 1000;
+            y = 999;
+        }if(lvl == "10"){
+            //1999
+            x = 10000;
+        }
+        int progress = ((width-10)/x)*(points-y);
+        System.out.println(width);
         RelativeLayout progressBar = new RelativeLayout(this);
         RelativeLayout.LayoutParams progressBarLayout = new RelativeLayout.LayoutParams(progress, 80);
         progressBar.setBackgroundColor(getResources().getColor(R.color.hhu_blue));
