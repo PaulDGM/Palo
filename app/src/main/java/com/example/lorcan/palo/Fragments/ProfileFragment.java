@@ -52,6 +52,7 @@ import com.example.lorcan.palo.CurrLocUpdate;
 import com.example.lorcan.palo.GetFromDatabase.GetEncodedImageFromDB;
 import com.example.lorcan.palo.GetFromDatabase.GetStatusFromDB;
 import com.example.lorcan.palo.GetFromDatabase.GetUsernameFromDB;
+import com.example.lorcan.palo.IconsChecker.CheckI8;
 import com.example.lorcan.palo.JSONClicks;
 import com.example.lorcan.palo.MarkerColorJSON;
 import com.example.lorcan.palo.MyApplicationContext;
@@ -677,7 +678,8 @@ public class ProfileFragment extends Fragment {
         System.out.println("btnChange Clicked");
         OnClickSendToDB onClickSendToDB = new OnClickSendToDB();
         onClickSendToDB.sendBtnClick(android_id, "1");
-
+        CheckI8 checkI8 = new CheckI8();
+        checkI8.checkI8(marker-1);
         if (etStatus.getText().toString().isEmpty()) {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(ProfileFragment.this.getActivity());

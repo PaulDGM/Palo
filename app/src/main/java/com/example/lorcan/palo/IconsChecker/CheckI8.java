@@ -53,7 +53,7 @@ public class CheckI8 {
         }
     }
 
-    public void addNewLatLng(int indexColor){
+    public void checkI8(int indexColor){
         String old = getData(MyApplicationContext.getAppContext());
         System.out.println(old);
         try {
