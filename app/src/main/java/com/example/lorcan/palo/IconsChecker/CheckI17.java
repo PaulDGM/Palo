@@ -79,6 +79,7 @@ public class CheckI17 {
                 currentCnt = currentCnt+1;
                 jsonArray.put(0, String.valueOf(currentCnt));
 
+                createNewDBDeleteOld("{ \"MarkerCount\" : "+jsonArray.toString()+"}");
                 final String android_id = tManager.getDeviceId();
                 if (jsonArray.get(0).toString() == "20") {
                     SendIconToDB sendIconToDB = new SendIconToDB();

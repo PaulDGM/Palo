@@ -18,9 +18,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Date;
 
-public class CheckI18 {
-    private static String fileName = "5profilecalls.json";
+public class CheckI5 {
+    private static String fileName = "MapAndProfile.json";
 
     private static void createNewDBDeleteOld(String nameJSON) {
         try {
@@ -52,41 +53,41 @@ public class CheckI18 {
         }
     }
 
-    public void check10() {
+    public void check10(String post, String mapOrProfile, Date date) {
 
         String old = getData(MyApplicationContext.getAppContext());
         System.out.println(old);
         try {
             if (old == null) {
-                createNewDBDeleteOld("{ \"Profilecall\" : ['0']}");
+                createNewDBDeleteOld("{ \"ProfileMap\" : ['0', '0']}");
                 old = getData(MyApplicationContext.getAppContext());
             }
-
-
             JSONObject jsonObject = new JSONObject(old);
-            JSONArray jsonArray = jsonObject.getJSONArray("Profilecall");
+            JSONArray jsonArray = jsonObject.getJSONArray("ProfileMap");
+
+            String oldPost = jsonArray.get(0).toString();
+            String oldMapOrProfile = jsonArray.get(1).toString();
+
 
 
             IconListJSON iconListJSON = new IconListJSON();
-            int isIcon = iconListJSON.getIcon(17);
+            int isIcon = iconListJSON.getIcon(4);
             if (isIcon == 0) {
                 TelephonyManager tManager = (TelephonyManager) MyApplicationContext.getAppContext().getSystemService(Context.TELEPHONY_SERVICE);
                 if (ActivityCompat.checkSelfPermission(MyApplicationContext.getAppContext(), android.Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
                     return;
                 }
-                int currentCnt = Integer.parseInt(jsonArray.get(0).toString());
-                currentCnt = currentCnt+1;
-                jsonArray.put(0, String.valueOf(currentCnt));
-                createNewDBDeleteOld("{ \"Profilecall\" : "+jsonArray.toString()+"}");
-
                 final String android_id = tManager.getDeviceId();
-                if (jsonArray.get(0).toString() == "5") {
-                    SendIconToDB sendIconToDB = new SendIconToDB();
-                    sendIconToDB.sendIcon("18", android_id);
-                    iconListJSON.setIcon(18);
+                if(oldPost != post) {
+                    if ((mapOrProfile == "map" && oldMapOrProfile == "profile") || (mapOrProfile == "profile" && oldMapOrProfile == "map")) {
+                        SendIconToDB sendIconToDB = new SendIconToDB();
+                        sendIconToDB.sendIcon("5", android_id);
+                        iconListJSON.setIcon(5);
+                    }
                 }
-
-
+                jsonArray.put(0, post);
+                jsonArray.put(1, mapOrProfile);
+                createNewDBDeleteOld("{ \"ProfileMap\" : "+jsonArray.toString()+"}");
             }
 
         } catch (JSONException e) {

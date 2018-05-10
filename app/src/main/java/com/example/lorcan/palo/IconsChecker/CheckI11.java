@@ -93,6 +93,7 @@ public class CheckI11 {
                     int currentCnt = Integer.parseInt(jsonArray.get(0).toString());
                     currentCnt = currentCnt +1;
                     jsonArray.put(0, String.valueOf(currentCnt));
+                    createNewDBDeleteOld("{ \"StatusCount\" : "+jsonArray.toString()+"}");
                 }
 
                 final String android_id = tManager.getDeviceId();
@@ -101,6 +102,7 @@ public class CheckI11 {
                     sendIconToDB.sendIcon("11", android_id);
                     iconListJSON.setIcon(11);
                 }
+
             }
 
         } catch (JSONException e) {
