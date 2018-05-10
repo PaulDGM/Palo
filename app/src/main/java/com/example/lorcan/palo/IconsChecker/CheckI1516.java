@@ -60,12 +60,16 @@ public class CheckI1516 {
 
         @SuppressLint("SimpleDateFormat")
         DateFormat dateFormat = new SimpleDateFormat("mm");
+        DateFormat dayFormat = new SimpleDateFormat("dd");
+
+        String month = dateFormat.format(date);
+        String day = dayFormat.format(date);
 
         String old = getData(MyApplicationContext.getAppContext());
         System.out.println(old);
         try {
             if (old == null) {
-                createNewDBDeleteOld("{ \"Date\" : ['0']}");
+                createNewDBDeleteOld("{ \"Date\" : ['0', '0', '0']}"); // [day, month, count]
                 old = getData(MyApplicationContext.getAppContext());
             }
             JSONObject jsonObject = new JSONObject(old);
@@ -83,8 +87,23 @@ public class CheckI1516 {
                     return;
                 }
                 final String android_id = tManager.getDeviceId();
-                count = count +1;
-                jsonArray.put(0, String.valueOf(count));
+
+
+
+                int oldday = Integer.parseInt(jsonArray.get(0).toString());
+                int currentday = Integer.parseInt(day);
+
+                int oldmonth = Integer.parseInt(jsonArray.get(1).toString());
+                int currentmonth = Integer.parseInt(month);
+
+                if(currentday == oldday+1 && currentmonth == oldmonth) {
+                    count = count + 1;
+                }
+                jsonArray.put(0, String.valueOf(day));
+                jsonArray.put(1, String.valueOf(month));
+                jsonArray.put(2, String.valueOf(count));
+
+
                 if(count == 7){
                     SendIconToDB sendIconToDB = new SendIconToDB();
                     sendIconToDB.sendIcon("15", android_id);
@@ -100,8 +119,22 @@ public class CheckI1516 {
                     return;
                 }
                 final String android_id = tManager.getDeviceId();
-                count = count +1;
-                jsonArray.put(0, String.valueOf(count));
+
+                int oldday = Integer.parseInt(jsonArray.get(0).toString());
+                int currentday = Integer.parseInt(day);
+
+                int oldmonth = Integer.parseInt(jsonArray.get(1).toString());
+                int currentmonth = Integer.parseInt(month);
+
+                if(currentday == oldday+1 && currentmonth == oldmonth) {
+                    count = count + 1;
+                }
+                jsonArray.put(0, String.valueOf(day));
+                jsonArray.put(1, String.valueOf(month));
+                jsonArray.put(2, String.valueOf(count));
+
+
+
                 if(count == 30){
                     SendIconToDB sendIconToDB = new SendIconToDB();
                     sendIconToDB.sendIcon("16", android_id);
