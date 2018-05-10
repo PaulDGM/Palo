@@ -203,7 +203,7 @@
     <string name="username">Username</string>
 
     <!-- Achievement toasts -->
-    <string name="achievement_1">New Achievement: Patient Zero - Register at Palo during the first test phase</string>
+    <string name="achievement_1">New Achievement: Starter - Register at Palo during the first test phase</string>
     <string name="achievement_2">New Achievement: Pic Yourself - Upload a profile photo</string>
     <string name="achievement_3">New Achievement: Profile Poster - Post your first status from the profile</string>
     <string name="achievement_4">New Achievement: Map Poster - Post your first status from the map</string>

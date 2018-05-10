@@ -204,7 +204,7 @@
     <string name="username">Username</string>
 
     <!-- Achievement toasts -->
-    <string name="achievement_1">Neues Achievement: Patient Zero – Registriere dich bei Palo während der ersten Testphase</string>
+    <string name="achievement_1">Neues Achievement: Starter – Registriere dich bei Palo während der ersten Testphase</string>
     <string name="achievement_2">Neues Achievement: Pic Yourself – Lade ein Profilfoto hoch</string>
     <string name="achievement_3">Neues Achievement: Profile Poster – Poste deinen ersten Status aus dem Profil</string>
     <string name="achievement_4">Neues Achievement: Map Poster – Poste deinen ersten Status aus der Karte</string>
@@ -218,11 +218,11 @@
     <string name="achievement_12">Neues Achievement: Traveller - Poste zwei Status hintereinander, die mindestens 20km auseinander liegen</string>
     <string name="achievement_13">Neues Achievement: Travel Guru - Poste zwei Status hintereinander, die mindestens 100km auseinander liegen</string>
     <string name="achievement_14">Neues Achievement: Travel God - Poste zwei Status hintereinander, die mindestens 1000km auseinander liegen</string>
-    <string name="achievement_15">Neues Achievement: Perfect week – Poste eine Woche lang mindestens einen Status pro Tag</string>
-    <string name="achievement_16">Neues Achievement: Perfect month – Poste einen Monat lang mindestens einen Status pro Tag</string>
-    <string name="achievement_17">Neues Achievement: Marker clicker – Klicke 20 Marker von anderen Palo Usern an</string>
+    <string name="achievement_15">Neues Achievement: Perfect Week – Poste eine Woche lang mindestens einen Status pro Tag</string>
+    <string name="achievement_16">Neues Achievement: Perfect Month – Poste einen Monat lang mindestens einen Status pro Tag</string>
+    <string name="achievement_17">Neues Achievement: Marker Clicker – Klicke 20 Marker von anderen Palo Usern an</string>
     <string name="achievement_18">Neues Achievement: Profile Viewer - Öffne das Profil von fünf anderen Palo-Usern</string>
-    <string name="achievement_19">Neues Achievement: Halfway done – Erreiche Level 5</string>
+    <string name="achievement_19">Neues Achievement: Halfway Done – Erreiche Level 5</string>
     <string name="achievement_20">Neues Achievement: Finisher – Erreiche Level 10</string>
 
 </resources>

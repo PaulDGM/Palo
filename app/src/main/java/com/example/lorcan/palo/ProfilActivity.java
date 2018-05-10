@@ -147,65 +147,80 @@ public class ProfilActivity extends AppCompatActivity {
                 ImageView iconIV = new ImageView(this);
                 iconIV.setScaleX(0.50f);
                 iconIV.setScaleY(0.50f);
+
                 if(i == 3) {
-                    iconIV.setBackgroundResource(R.drawable.herz); //"icon"+ i-1
+                    iconIV.setBackgroundResource(R.drawable.achievement_starter); //"icon"+ i-1
                 }
+
                 if(i == 4) {
-                    iconIV.setBackgroundResource(R.drawable.chat); //"icon"+ i-1
+                    iconIV.setBackgroundResource(R.drawable.achievement_camera); //"icon"+ i-1
                 }
+
                 if(i == 5) {
-                    iconIV.setBackgroundResource(R.drawable.haufen); //"icon"+ i-1
+                    iconIV.setBackgroundResource(R.drawable.achievement_profile_poster); //"icon"+ i-1
                 }
+
                 if(i == 6) {
-                    iconIV.setBackgroundResource(R.drawable.kaffee); //"icon"+ i-1
+                    iconIV.setBackgroundResource(R.drawable.achievement_map_poster); //"icon"+ i-1
                 }
+
                 if(i == 7) {
-                    iconIV.setBackgroundResource(R.drawable.kamera); //"icon"+ i-1
+                    iconIV.setBackgroundResource(R.drawable.achievements_sophisticated_poster); //"icon"+ i-1
                 }
+
                 if(i == 8) {
-                    iconIV.setBackgroundResource(R.drawable.kreisel); //"icon"+ i-1
+                    iconIV.setBackgroundResource(R.drawable.achievement_old_but_gold); //"icon"+ i-1
                 }
+
                 if(i == 9) {
-                    iconIV.setBackgroundResource(R.drawable.herz); //"icon"+ i-1
+                    iconIV.setBackgroundResource(R.drawable.achievement_change_marker_color); //"icon"+ i-1
                 }
+
                 if(i == 10) {
-                    iconIV.setBackgroundResource(R.drawable.herz); //"icon"+ i-1
+                    iconIV.setBackgroundResource(R.drawable.achievement_color_picker); //"icon"+ i-1
                 }
+
                 if(i == 11) {
-                    iconIV.setBackgroundResource(R.drawable.herz); //"icon"+ i-1
+                    iconIV.setBackgroundResource(R.drawable.achievement_sophisticated_in_color); //"icon"+ i-1
                 }
+
                 if(i == 12) {
-                    iconIV.setBackgroundResource(R.drawable.herz); //"icon"+ i-1
+                    iconIV.setBackgroundResource(R.drawable.achievement_night_owl); //"icon"+ i-1
                 }
+
                 if(i == 13) {
-                    iconIV.setBackgroundResource(R.drawable.herz); //"icon"+ i-1
+                    iconIV.setBackgroundResource(R.drawable.achievement_quick_poster); //"icon"+ i-1
                 }
+
                 if(i == 14) {
-                    iconIV.setBackgroundResource(R.drawable.herz); //"icon"+ i-1
+                    iconIV.setBackgroundResource(R.drawable.achievement_20km); //"icon"+ i-1
                 }
+
                 if(i == 15) {
-                    iconIV.setBackgroundResource(R.drawable.herz); //"icon"+ i-1
+                    iconIV.setBackgroundResource(R.drawable.achievement_100km); //"icon"+ i-1
                 }
+
                 if(i == 16) {
-                    iconIV.setBackgroundResource(R.drawable.herz); //"icon"+ i-1
+                    iconIV.setBackgroundResource(R.drawable.achievement_1000km); //"icon"+ i-1
                 }
+
                 if(i == 17) {
-                    iconIV.setBackgroundResource(R.drawable.herz); //"icon"+ i-1
+                    iconIV.setBackgroundResource(R.drawable.achievement_perfect_week); //"icon"+ i-1
                 }
                 if(i == 18) {
-                    iconIV.setBackgroundResource(R.drawable.herz); //"icon"+ i-1
+                    iconIV.setBackgroundResource(R.drawable.achievement_perfect_month); //"icon"+ i-1
                 }
                 if(i == 19) {
-                    iconIV.setBackgroundResource(R.drawable.herz); //"icon"+ i-1
+                    iconIV.setBackgroundResource(R.drawable.achievement_marker_klicker); //"icon"+ i-1
                 }
                 if(i == 20) {
-                    iconIV.setBackgroundResource(R.drawable.herz); //"icon"+ i-1
+                    iconIV.setBackgroundResource(R.drawable.achievement_profile_viewer); //"icon"+ i-1
                 }
                 if(i == 21) {
-                    iconIV.setBackgroundResource(R.drawable.herz); //"icon"+ i-1
+                    iconIV.setBackgroundResource(R.drawable.achievement_halfway_done); //"icon"+ i-1
                 }
                 if(i == 22) {
-                    iconIV.setBackgroundResource(R.drawable.herz); //"icon"+ i-1
+                    iconIV.setBackgroundResource(R.drawable.achievement_finisher); //"icon"+ i-1
                 }
                 if(i == 23) {
                     iconIV.setBackgroundResource(R.drawable.herz); //"icon"+ i-1
