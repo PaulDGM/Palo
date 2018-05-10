@@ -49,12 +49,10 @@ public class SendIconToDB {
     19 = Halfway done - Erreiche Lvl 5
     20 = Finisher - Erreiche Lvl 10
 
-
      */
 
 
     public void sendIcon(final String iconNum, final String android_id) {
-
 
         this.iconNum = iconNum;
         this.android_id = android_id;
@@ -64,67 +62,93 @@ public class SendIconToDB {
             @Override
             public void onResponse(String response) {
 
+                PunkteJSON punkteJSON = new PunkteJSON();
+                int points = punkteJSON.getPoints();
+
                 System.out.println("Response setIcon: " + response);
 
                 if(iconNum == "1") {
-                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievment: Patient Zero - Registriere dich bei Palo während der ersten Testphase", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievement: Patient Zero - Registriere dich bei Palo während der ersten Testphase", Toast.LENGTH_LONG).show();
                 }
                 if(iconNum == "2") {
-                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievment: Pic Yourself! - Lade ein Profilfoto hoch", Toast.LENGTH_LONG).show();
+                    punkteJSON.setPoints(points + 2);
+                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievement: Pic Yourself! - Lade ein Profilfoto hoch", Toast.LENGTH_LONG).show();
                 }
                 if(iconNum == "3") {
-                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievment: Profile Poster - Poste deinen ersten Status aus dem Profil", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievement: Profile Poster - Poste deinen ersten Status aus dem Profil", Toast.LENGTH_LONG).show();
                 }
                 if(iconNum == "4") {
-                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievment: Poster - Poste deinen ersten Status aus der Karte", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievement: Poster - Poste deinen ersten Status aus der Karte", Toast.LENGTH_LONG).show();
                 }
                 if(iconNum == "5") {
-                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievment: Sophisticated Poster - Poste einen Status aus deinem Profil und direkt aus der Karte", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievement: Sophisticated Poster - Poste einen Status aus deinem Profil und direkt aus der Karte", Toast.LENGTH_LONG).show();
                 }
                 if(iconNum == "6") {
-                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievment: Old but Gold = Poste einen alten Status erneut", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievement: Old but Gold = Poste einen alten Status erneut", Toast.LENGTH_LONG).show();
                 }
                 if(iconNum == "7") {
-                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievment: Color Changer - Ändere die Marker Farbe", Toast.LENGTH_LONG).show();
+                    punkteJSON.setPoints(points + 2);
+                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievement: Color Changer - Ändere die Marker Farbe", Toast.LENGTH_LONG).show();
                 }
                 if(iconNum == "8") {
-                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievment: Color Picker - Poste einen Status in allen 10 Farben", Toast.LENGTH_LONG).show();
+                    punkteJSON.setPoints(points + 5);
+                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievement: Color Picker - Poste einen Status in allen 10 Farben", Toast.LENGTH_LONG).show();
                 }
                 if(iconNum == "9") {
-                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievment: Nightowl - Poste einen Status nach 3 Uhr nachts bis 5 Uhr morgens", Toast.LENGTH_LONG).show();
+                    punkteJSON.setPoints(points + 10);
+                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievement: Nightowl - Poste einen Status nach 3 Uhr nachts bis 5 Uhr morgens", Toast.LENGTH_LONG).show();
                 }
                 if(iconNum == "10") {
-                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievment: Poste 10 Status an einem Tag", Toast.LENGTH_LONG).show();
+                    punkteJSON.setPoints(points + 4);
+                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievement: Poste 10 Status an einem Tag", Toast.LENGTH_LONG).show();
                 }
                 if(iconNum == "11") {
-                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievment: Poste zwei Status hintereinander, die mindestens 20km auseinander liegen", Toast.LENGTH_LONG).show();
+                    punkteJSON.setPoints(points + 5);
+                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievement: Poste zwei Status hintereinander, die mindestens 20km auseinander liegen", Toast.LENGTH_LONG).show();
                 }
                 if(iconNum == "12") {
-                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievment: Poste zwei Status hintereinander, die mindestens 100km auseinander liegen", Toast.LENGTH_LONG).show();
+                    punkteJSON.setPoints(points + 1);
+                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievement: Poste zwei Status hintereinander, die mindestens 100km auseinander liegen", Toast.LENGTH_LONG).show();
                 }
                 if(iconNum == "13") {
-                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievment: Poste zwei Status hintereinander, die mindestens 1000km auseinander liegen", Toast.LENGTH_LONG).show();
+                    punkteJSON.setPoints(points + 5);
+                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievement: Poste zwei Status hintereinander, die mindestens 1000km auseinander liegen", Toast.LENGTH_LONG).show();
                 }
 
                 if(iconNum == "14") {
-                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievment: Perfekt week - Poste eine Woche lang mindestens einen Status pro Tag", Toast.LENGTH_LONG).show();
+                    punkteJSON.setPoints(points + 10);
+                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievement: Perfekt week - Poste eine Woche lang mindestens einen Status pro Tag", Toast.LENGTH_LONG).show();
                 }
 
                 if(iconNum == "15") {
-                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievment: Perfect month - Poste einen Monat lang mindestens einen Status pro Tag", Toast.LENGTH_LONG).show();
+                    punkteJSON.setPoints(points + 5);
+                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievement: Perfect month - Poste einen Monat lang mindestens einen Status pro Tag", Toast.LENGTH_LONG).show();
                 }
 
                 if(iconNum == "16") {
-                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievment: Marker clicker - Klicke zehn Marker von anderen Palo Usern", Toast.LENGTH_LONG).show();
+                    punkteJSON.setPoints(points + 10);
+                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievement: Marker clicker - Klicke zehn Marker von anderen Palo Usern", Toast.LENGTH_LONG).show();
                 }
+
                 if(iconNum == "17") {
-                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievment: Profile Viewer - Öffne das Profil von fünf anderen Palo-Usern", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievement: Profile Viewer - Öffne das Profil von fünf anderen Palo-Usern", Toast.LENGTH_LONG).show();
                 }
+
                 if(iconNum == "18") {
-                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievment: Halfway done - Erreiche Lvl 5", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievement: Halfway done - Erreiche Lvl 5", Toast.LENGTH_LONG).show();
                 }
+
                 if(iconNum == "19") {
-                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievment: Finisher - Erreiche Lvl 10", Toast.LENGTH_LONG).show();
+                    punkteJSON.setPoints(points + 2);
+                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievement: Finisher - Erreiche Lvl 10", Toast.LENGTH_LONG).show();
+                }
+
+                if (iconNum == "20") {
+                    punkteJSON.setPoints(points + 5);
+                }
+
+                if (iconNum == "21") {
+                    punkteJSON.setPoints(points + 10);
                 }
             }
 
