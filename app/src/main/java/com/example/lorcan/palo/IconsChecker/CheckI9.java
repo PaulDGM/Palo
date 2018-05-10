@@ -9,6 +9,7 @@ import android.util.Log;
 import com.example.lorcan.palo.IconListJSON;
 import com.example.lorcan.palo.MyApplicationContext;
 import com.example.lorcan.palo.SendIconToDB;
+import com.google.android.gms.maps.model.LatLng;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -19,8 +20,8 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class CheckI8 {
-    private static String fileName = "5colorsClicked.json";
+public class CheckI9 {
+    private static String fileName = "colorClicked.json";
 
     private static void createNewDBDeleteOld(String nameJSON) {
         try {
@@ -52,37 +53,23 @@ public class CheckI8 {
         }
     }
 
-    public void checkI8(int indexColor){
+    public void checkI9(int indexColor){
         String old = getData(MyApplicationContext.getAppContext());
         System.out.println(old);
         try {
             if(old == null){
-                createNewDBDeleteOld("{ \"Color\" : ['0', '0', '0', '0', '0']}");
+                createNewDBDeleteOld("{ \"Color\" : ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0']}");
                 old = getData(MyApplicationContext.getAppContext());
             }
 
 
             IconListJSON iconListJSON = new IconListJSON();
-            int isIcon = iconListJSON.getIcon(7);
+            int isIcon = iconListJSON.getIcon(8);
             if(isIcon == 0) {
                 JSONObject jsonObject = new JSONObject(old);
                 JSONArray jsonArray = jsonObject.getJSONArray("Color");
-                boolean bool1 = true;
 
-                for(int k = 0; k < jsonArray.length(); k++){
-                    if(jsonArray.get(k) == indexColor) {
-                        bool1 = false;
-                    }
-                }
-
-                if(bool1) {
-                    for (int j = 0; j < jsonArray.length(); j++) {
-                        if (jsonArray.get(j) == "0") {
-                            jsonArray.put(j, indexColor);
-                        }
-                    }
-                }
-
+                jsonArray.put(indexColor, "1");
                 TelephonyManager tManager = (TelephonyManager) MyApplicationContext.getAppContext().getSystemService(Context.TELEPHONY_SERVICE);
                 if (ActivityCompat.checkSelfPermission(MyApplicationContext.getAppContext(), android.Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
 
@@ -98,8 +85,8 @@ public class CheckI8 {
                 }
                 if(bool){
                     SendIconToDB sendIconToDB = new SendIconToDB();
-                    sendIconToDB.sendIcon("8", android_id);
-                    iconListJSON.setIcon(8);
+                    sendIconToDB.sendIcon("9", android_id);
+                    iconListJSON.setIcon(9);
                 }
                 createNewDBDeleteOld("{ \"Color\" : " + jsonArray.toString() + "}");
             }
@@ -108,13 +95,13 @@ public class CheckI8 {
         }
     }
 
-    public int getCheck8(int i){
+    public int getCheck9(int i){
         String old = getData(MyApplicationContext.getAppContext());
         int cnt = 0;
         try {
             JSONObject jsonObject =  new JSONObject(old);
 
-            JSONArray jsonArray = jsonObject.getJSONArray("Color");
+            JSONArray jsonArray = jsonObject.getJSONArray("Clicks");
 
             cnt = java.lang.Integer.parseInt(jsonArray.get(i).toString());
 
@@ -123,4 +110,5 @@ public class CheckI8 {
         }
         return cnt;
     }
+
 }

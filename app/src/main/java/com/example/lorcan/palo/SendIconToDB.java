@@ -36,7 +36,7 @@ public class SendIconToDB {
     6 = Old but Gold = Poste einen alten Status erneut
     7 = Color Changer - Ändere die Marker Farbe
     8 = Color Picker - Poste einen Status in allen 10 Farben
-    9 = Sophisticated in color– Poste einen Status in allen (10) Farben
+    9 = Sophisticated in color – Poste einen Status in allen (10) Farben
     10 = Nightowl - Poste einen Status nach 3 Uhr nachts bis 5 Uhr morgens
     11 = Poste 10 Status an einem Tag
     12 = Poste zwei Status hintereinander, die mindestens 20km auseinander liegen

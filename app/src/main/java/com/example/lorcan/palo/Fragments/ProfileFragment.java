@@ -53,8 +53,7 @@ import com.example.lorcan.palo.GetFromDatabase.GetEncodedImageFromDB;
 import com.example.lorcan.palo.GetFromDatabase.GetStatusFromDB;
 import com.example.lorcan.palo.GetFromDatabase.GetUsernameFromDB;
 import com.example.lorcan.palo.IconsChecker.CheckI6;
-import com.example.lorcan.palo.IconsChecker.CheckI8;
-import com.example.lorcan.palo.JSONClicks;
+import com.example.lorcan.palo.IconsChecker.CheckI9;
 import com.example.lorcan.palo.MarkerColorJSON;
 import com.example.lorcan.palo.MyApplicationContext;
 import com.example.lorcan.palo.OldStatus;
@@ -62,9 +61,7 @@ import com.example.lorcan.palo.OnClickSendToDB;
 import com.example.lorcan.palo.ProfilActivity;
 import com.example.lorcan.palo.PunkteJSON;
 import com.example.lorcan.palo.R;
-import com.example.lorcan.palo.SQLite.SQLiteData;
 import com.example.lorcan.palo.SendEncodedImageToDB;
-import com.example.lorcan.palo.SendIconToDB;
 import com.example.lorcan.palo.UsernameJSON;
 import com.example.lorcan.palo.sendStatusToDB;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -77,7 +74,6 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.kosalgeek.android.photoutil.ImageBase64;
 import com.kosalgeek.android.photoutil.ImageLoader;
@@ -681,8 +677,8 @@ public class ProfileFragment extends Fragment {
         System.out.println("btnChange Clicked");
         OnClickSendToDB onClickSendToDB = new OnClickSendToDB();
         onClickSendToDB.sendBtnClick(android_id, "1");
-        CheckI8 checkI8 = new CheckI8();
-        checkI8.checkI8(marker-1);
+        CheckI9 checkI9 = new CheckI9();
+        checkI9.checkI9(marker-1);
         if (etStatus.getText().toString().isEmpty()) {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(ProfileFragment.this.getActivity());
