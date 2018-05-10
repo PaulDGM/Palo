@@ -20,7 +20,7 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class CheckI111213 {
+public class CheckI121314 {
 
         private static String fileName = "checkIcon11.json";
 

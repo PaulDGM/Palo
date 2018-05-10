@@ -52,6 +52,7 @@ import com.example.lorcan.palo.CurrLocUpdate;
 import com.example.lorcan.palo.GetFromDatabase.GetEncodedImageFromDB;
 import com.example.lorcan.palo.GetFromDatabase.GetStatusFromDB;
 import com.example.lorcan.palo.GetFromDatabase.GetUsernameFromDB;
+import com.example.lorcan.palo.IconsChecker.CheckI6;
 import com.example.lorcan.palo.IconsChecker.CheckI8;
 import com.example.lorcan.palo.JSONClicks;
 import com.example.lorcan.palo.MarkerColorJSON;
@@ -339,7 +340,9 @@ public class ProfileFragment extends Fragment {
                 // if any item is selected this one should become the active status
                 String selectedItemText = (String) adapterView.getItemAtPosition(i);
                 if (!selectedItemText.equals(chose_status)) {
-                    Toast.makeText(ProfileFragment.this.getActivity(), selectedItemText, Toast.LENGTH_SHORT).show();
+                    CheckI6 checkI6 = new CheckI6();
+                    checkI6.check6();
+
                     etStatus.setText(selectedItemText);
                 }
             }

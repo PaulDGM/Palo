@@ -36,17 +36,18 @@ public class SendIconToDB {
     6 = Old but Gold = Poste einen alten Status erneut
     7 = Color Changer - Ändere die Marker Farbe
     8 = Color Picker - Poste einen Status in allen 10 Farben
-    9 = Nightowl - Poste einen Status nach 3 Uhr nachts bis 5 Uhr morgens
-    10 = Poste 10 Status an einem Tag
-    11 = Poste zwei Status hintereinander, die mindestens 20km auseinander liegen
-    12 = Poste zwei Status hintereinander, die mindestens 100km auseinander liegen
-    13 = Poste zwei Status hintereinander, die mindestens 1000km auseinander liegen
-    14 = Perfekt week - Poste eine Woche lang mindestens einen Status pro Tag
-    15 = Perfect month - Poste einen Monat lang mindestens einen Status pro Tag
-    16 = Marker clicker - Klicke zehn Marker von anderen Palo Usern
-    17 = Profile Viewer - Öffne das Profil von fünf anderen Palo-Usern
-    18 = Halfway done - Erreiche Lvl 5
-    19 = Finisher - Erreiche Lvl 10
+    9 = Sophisticated in color– Poste einen Status in allen (10) Farben
+    10 = Nightowl - Poste einen Status nach 3 Uhr nachts bis 5 Uhr morgens
+    11 = Poste 10 Status an einem Tag
+    12 = Poste zwei Status hintereinander, die mindestens 20km auseinander liegen
+    13 = Poste zwei Status hintereinander, die mindestens 100km auseinander liegen
+    14 = Poste zwei Status hintereinander, die mindestens 1000km auseinander liegen
+    15 = Perfekt week - Poste eine Woche lang mindestens einen Status pro Tag
+    16 = Perfect month - Poste einen Monat lang mindestens einen Status pro Tag
+    17 = Marker clicker - Klicke zehn Marker von anderen Palo Usern
+    18 = Profile Viewer - Öffne das Profil von fünf anderen Palo-Usern
+    19 = Halfway done - Erreiche Lvl 5
+    20 = Finisher - Erreiche Lvl 10
 
 
      */

@@ -71,6 +71,10 @@ public class IconListJSON {
         String old = getData(MyApplicationContext.getAppContext());
         int cnt = 0;
         try {
+            if(old == null){
+                createNewDBDeleteOld("{ \"Icons\" : ['0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0']}");
+                old = getData(MyApplicationContext.getAppContext());
+            }
             JSONObject jsonObject =  new JSONObject(old);
 
             JSONArray jsonArray = jsonObject.getJSONArray("Icons");
