@@ -35,6 +35,8 @@ import com.example.lorcan.palo.Fragments.OptionsMenu.ShareFragment;
 import com.example.lorcan.palo.Fragments.ProfileFragment;
 import com.example.lorcan.palo.GetFromDatabase.GetEncodedImageFromDB;
 import com.example.lorcan.palo.GetFromDatabase.GetUsernameFromDB;
+import com.example.lorcan.palo.IconsChecker.CheckI19;
+import com.example.lorcan.palo.IconsChecker.CheckI20;
 
 
 import java.util.ArrayList;
@@ -78,6 +80,12 @@ public class MainActivity extends AppCompatActivity
 
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        CheckI19 checkI19 = new CheckI19();
+        checkI19.check19();
+
+        CheckI20 checkI20 = new CheckI20();
+        checkI20.check20();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);

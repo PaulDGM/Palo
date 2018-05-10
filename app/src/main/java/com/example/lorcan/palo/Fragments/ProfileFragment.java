@@ -52,7 +52,19 @@ import com.example.lorcan.palo.CurrLocUpdate;
 import com.example.lorcan.palo.GetFromDatabase.GetEncodedImageFromDB;
 import com.example.lorcan.palo.GetFromDatabase.GetStatusFromDB;
 import com.example.lorcan.palo.GetFromDatabase.GetUsernameFromDB;
+import com.example.lorcan.palo.IconsChecker.CheckI1;
+import com.example.lorcan.palo.IconsChecker.CheckI10;
+import com.example.lorcan.palo.IconsChecker.CheckI11;
+import com.example.lorcan.palo.IconsChecker.CheckI121314;
+import com.example.lorcan.palo.IconsChecker.CheckI1516;
+import com.example.lorcan.palo.IconsChecker.CheckI19;
+import com.example.lorcan.palo.IconsChecker.CheckI2;
+import com.example.lorcan.palo.IconsChecker.CheckI20;
+import com.example.lorcan.palo.IconsChecker.CheckI3;
+import com.example.lorcan.palo.IconsChecker.CheckI5;
 import com.example.lorcan.palo.IconsChecker.CheckI6;
+import com.example.lorcan.palo.IconsChecker.CheckI7;
+import com.example.lorcan.palo.IconsChecker.CheckI8;
 import com.example.lorcan.palo.IconsChecker.CheckI9;
 import com.example.lorcan.palo.MarkerColorJSON;
 import com.example.lorcan.palo.MyApplicationContext;
@@ -74,6 +86,7 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.kosalgeek.android.photoutil.ImageBase64;
 import com.kosalgeek.android.photoutil.ImageLoader;
@@ -210,6 +223,9 @@ public class ProfileFragment extends Fragment {
         fab_marker9 = (ImageButton) view.findViewById(R.id.fab_marker9);
         fab_marker10 = (ImageButton) view.findViewById(R.id.fab_marker10);
 
+        CheckI1 checkI1 = new CheckI1();
+        checkI1.check1();
+
         int permissionCheck = ContextCompat.checkSelfPermission(MyApplicationContext.getAppContext(), android.Manifest.permission.CAMERA);
         if (permissionCheck == PackageManager.PERMISSION_DENIED) {
             RequestRuntimePermission();
@@ -229,6 +245,11 @@ public class ProfileFragment extends Fragment {
         Date date = new Date();
         time = dateFormat.format(date);
 
+        CheckI19 checkI19 = new CheckI19();
+        checkI19.check19();
+
+        CheckI20 checkI20 = new CheckI20();
+        checkI20.check20();
 
         final UsernameJSON usernameJSON1 = new UsernameJSON();
         final String name = usernameJSON1.getUserName();
@@ -357,6 +378,8 @@ public class ProfileFragment extends Fragment {
             fab_marker1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    CheckI7 checkI7 = new CheckI7();
+                    checkI7.check7();
                     Integer color = getResources().getColor(R.color.color_marker1);
                     background.setBackgroundColor(getResources().getColor(R.color.color_marker1));
                     marker = 1;
@@ -383,6 +406,8 @@ public class ProfileFragment extends Fragment {
             fab_marker2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    CheckI7 checkI7 = new CheckI7();
+                    checkI7.check7();
                     Integer color = getResources().getColor(R.color.color_marker2);
                     background.setBackgroundColor(getResources().getColor(R.color.color_marker2));
                     marker = 2;
@@ -409,6 +434,8 @@ public class ProfileFragment extends Fragment {
             fab_marker3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    CheckI7 checkI7 = new CheckI7();
+                    checkI7.check7();
                     Integer color = getResources().getColor(R.color.color_marker3);
                     background.setBackgroundColor(getResources().getColor(R.color.color_marker3));
                     marker = 3;
@@ -435,6 +462,8 @@ public class ProfileFragment extends Fragment {
             fab_marker4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    CheckI7 checkI7 = new CheckI7();
+                    checkI7.check7();
                     Integer color = getResources().getColor(R.color.color_marker4);
                     background.setBackgroundColor(getResources().getColor(R.color.color_marker4));
                     marker = 4;
@@ -460,6 +489,8 @@ public class ProfileFragment extends Fragment {
             fab_marker5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    CheckI7 checkI7 = new CheckI7();
+                    checkI7.check7();
                     Integer color = getResources().getColor(R.color.color_marker5);
                     background.setBackgroundColor(getResources().getColor(R.color.color_marker5));
                     marker = 5;
@@ -486,6 +517,8 @@ public class ProfileFragment extends Fragment {
             fab_marker6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    CheckI7 checkI7 = new CheckI7();
+                    checkI7.check7();
                     Integer color = getResources().getColor(R.color.color_marker6);
                     background.setBackgroundColor(getResources().getColor(R.color.color_marker6));
                     marker = 6;
@@ -511,6 +544,8 @@ public class ProfileFragment extends Fragment {
             fab_marker7.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    CheckI7 checkI7 = new CheckI7();
+                    checkI7.check7();
                     Integer color = getResources().getColor(R.color.color_marker7);
                     background.setBackgroundColor(getResources().getColor(R.color.color_marker7));
                     marker = 7;
@@ -536,6 +571,8 @@ public class ProfileFragment extends Fragment {
             fab_marker8.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    CheckI7 checkI7 = new CheckI7();
+                    checkI7.check7();
                     Integer color = getResources().getColor(R.color.color_marker8);
                     background.setBackgroundColor(getResources().getColor(R.color.color_marker8));
                     marker = 8;
@@ -562,6 +599,8 @@ public class ProfileFragment extends Fragment {
             fab_marker9.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    CheckI7 checkI7 = new CheckI7();
+                    checkI7.check7();
                     Integer color = getResources().getColor(R.color.color_marker9);
                     background.setBackgroundColor(getResources().getColor(R.color.color_marker9));
                     marker = 9;
@@ -587,6 +626,8 @@ public class ProfileFragment extends Fragment {
             fab_marker10.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    CheckI7 checkI7 = new CheckI7();
+                    checkI7.check7();
                     Integer color = getResources().getColor(R.color.color_marker10);
                     marker = 10;
                     markerColorJSON.setActColor(marker);
@@ -677,8 +718,8 @@ public class ProfileFragment extends Fragment {
         System.out.println("btnChange Clicked");
         OnClickSendToDB onClickSendToDB = new OnClickSendToDB();
         onClickSendToDB.sendBtnClick(android_id, "1");
-        CheckI9 checkI9 = new CheckI9();
-        checkI9.checkI9(marker-1);
+
+
         if (etStatus.getText().toString().isEmpty()) {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(ProfileFragment.this.getActivity());
@@ -712,6 +753,30 @@ public class ProfileFragment extends Fragment {
                                 lng = location.getLongitude();
                                 sendStatusToDB statusToDB = new sendStatusToDB();
                                 statusToDB.sendStatus(etStatus.getText().toString(), lat, lng, time, android_id, marker);
+                                LatLng latLng = new LatLng(lat, lng);
+                                CheckI9 checkI9 = new CheckI9();
+                                checkI9.checkI9(marker-1);
+
+                                CheckI8 checkI8 = new CheckI8();
+                                int markerNum = marker;
+                                checkI8.checkI8(markerNum);
+
+                                Date date = new Date();
+
+                                CheckI10 checkI10 = new CheckI10();
+                                checkI10.check10(date);
+
+
+                                CheckI11 checkI11 = new CheckI11();
+                                checkI11.check11(date);
+
+
+                                CheckI121314 checkI121314 = new CheckI121314();
+                                checkI121314.check121314(latLng);
+
+                                CheckI1516 checkI1516 = new CheckI1516();
+                                checkI1516.check1516(date);
+
                                 CurrLocUpdate upFragment = new CurrLocUpdate();
                                 FragmentManager fragmentManager = getFragmentManager();
                                 fragmentManager.beginTransaction()
@@ -749,8 +814,18 @@ public class ProfileFragment extends Fragment {
         sendStatusToDB statusToDB = new sendStatusToDB();
         cnt_status_profile += 1;
 
+
+        CheckI3 checkI3 = new CheckI3();
+        checkI3.check3();
+
+
+
         DateFormat dateFormat = new SimpleDateFormat("HH:mm");
         Date date = new Date();
+
+        CheckI5 checkI5 = new CheckI5();
+        checkI5.check5(status, "profile",date);
+
         time = dateFormat.format(date);
         statusToDB.sendStatus(status, lat, lng, time, android_id, marker);
 
@@ -798,6 +873,9 @@ public class ProfileFragment extends Fragment {
         } catch (FileNotFoundException e) {
             Toast.makeText(ProfileFragment.this.getActivity(), R.string.image_upload_denied, Toast.LENGTH_SHORT).show();
         }
+
+        CheckI2 checkI2 = new CheckI2();
+        checkI2.check2();
     }
 
     private void RequestRuntimePermission() {

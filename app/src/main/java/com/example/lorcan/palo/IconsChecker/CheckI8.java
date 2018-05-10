@@ -52,7 +52,7 @@ public class CheckI8 {
         }
     }
 
-    public void checkI8(int indexColor){
+    public void checkI8(int markerNum){
         String old = getData(MyApplicationContext.getAppContext());
         System.out.println(old);
         try {
@@ -70,7 +70,7 @@ public class CheckI8 {
                 boolean bool1 = true;
 
                 for(int k = 0; k < jsonArray.length(); k++){
-                    if(jsonArray.get(k) == indexColor) {
+                    if(jsonArray.get(k) == markerNum) {
                         bool1 = false;
                     }
                 }
@@ -78,7 +78,7 @@ public class CheckI8 {
                 if(bool1) {
                     for (int j = 0; j < jsonArray.length(); j++) {
                         if (jsonArray.get(j) == "0") {
-                            jsonArray.put(j, indexColor);
+                            jsonArray.put(j, markerNum);
                         }
                     }
                 }

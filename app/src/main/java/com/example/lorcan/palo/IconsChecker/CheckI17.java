@@ -53,7 +53,7 @@ public class CheckI17 {
         }
     }
 
-    public void check10() {
+    public void check17() {
 
         String old = getData(MyApplicationContext.getAppContext());
         System.out.println(old);

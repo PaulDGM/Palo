@@ -54,7 +54,7 @@ public class CheckI121314 {
             }
         }
 
-        public void addNewLatLng(LatLng latLngNew){
+        public void check121314(LatLng latLngNew){
             String latNew = String.valueOf(latLngNew.latitude);
             String lngNew = String.valueOf(latLngNew.longitude);
             String old = getData(MyApplicationContext.getAppContext());

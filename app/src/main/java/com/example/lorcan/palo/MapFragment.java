@@ -12,7 +12,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -32,6 +31,15 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.lorcan.palo.GetFromDatabase.GetStatusFromDB;
+import com.example.lorcan.palo.IconsChecker.CheckI10;
+import com.example.lorcan.palo.IconsChecker.CheckI11;
+import com.example.lorcan.palo.IconsChecker.CheckI121314;
+import com.example.lorcan.palo.IconsChecker.CheckI1516;
+import com.example.lorcan.palo.IconsChecker.CheckI17;
+import com.example.lorcan.palo.IconsChecker.CheckI19;
+import com.example.lorcan.palo.IconsChecker.CheckI20;
+import com.example.lorcan.palo.IconsChecker.CheckI4;
+import com.example.lorcan.palo.IconsChecker.CheckI5;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMapOptions;
@@ -42,13 +50,11 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.squareup.haha.perflib.Type;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Objects;
 
 
 /**
@@ -110,6 +116,11 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
         etStatusInMap = (EditText) view.findViewById(R.id.etStatusInMap);
         imageView = (ImageView) view.findViewById(R.id.message);
 
+        CheckI19 checkI19 = new CheckI19();
+        checkI19.check19();
+
+        CheckI20 checkI20 = new CheckI20();
+        checkI20.check20();
 
         etStatusInMap.setFilters(new InputFilter[] { filter });
 
@@ -214,6 +225,10 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
                         android_id = tManager.getDeviceId();
                     }
 
+                    CheckI4 checkI4 = new CheckI4();
+                    checkI4.check4();
+
+
 
 
                     sendStatusToDB statusToDB = new sendStatusToDB();
@@ -227,6 +242,24 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
                     //-----------------------
                     DateFormat dateFormat = new SimpleDateFormat("HH:mm");
                     Date date = new Date();
+
+                    CheckI5 checkI5 = new CheckI5();
+                    checkI5.check5(status, "map",date);
+
+                    CheckI10 checkI10 = new CheckI10();
+                    checkI10.check10(date);
+
+
+                    CheckI11 checkI11 = new CheckI11();
+                    checkI11.check11(date);
+
+
+                    CheckI121314 checkI121314 = new CheckI121314();
+                    checkI121314.check121314(currLocation);
+
+                    CheckI1516 checkI1516 = new CheckI1516();
+                    checkI1516.check1516(date);
+
                     String time = dateFormat.format(date);
                     double latitude = currLocation.latitude;
                     double longitude = currLocation.longitude;
@@ -387,6 +420,10 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
 
                 @Override
                 public void onInfoWindowClick(Marker arg0) {
+
+
+                    CheckI17 checkI17 = new CheckI17();
+                    checkI17.check17();
 
                     String title = arg0.getTitle();
 

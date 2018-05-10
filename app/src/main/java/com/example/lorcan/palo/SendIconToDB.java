@@ -26,7 +26,7 @@ public class SendIconToDB {
     /*
     ICONS SETTING
 
-    INDEX SET KIND OF ICON
+    INDEX-SET = KIND OF ICON
 
     1) Patient Zero - Register at Palo during the first test phase
     2) Pic Yourself - Upload a profile photo

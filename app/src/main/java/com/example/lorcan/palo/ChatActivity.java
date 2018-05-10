@@ -21,6 +21,8 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
+import com.example.lorcan.palo.IconsChecker.CheckI18;
+
 import java.io.Serializable;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -76,6 +78,9 @@ public class ChatActivity extends AppCompatActivity {
                 punkteJSON.setPoints(points + 1);
 
                 //-----------------------
+
+                CheckI18 checkI18 = new CheckI18();
+                checkI18.check18();
                 Intent intent = new Intent(ChatActivity.this, ProfilActivity.class);
                 intent.putExtra("name", name);
                 startActivity(intent);

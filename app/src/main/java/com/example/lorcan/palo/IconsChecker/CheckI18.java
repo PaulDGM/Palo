@@ -52,7 +52,7 @@ public class CheckI18 {
         }
     }
 
-    public void check10() {
+    public void check18() {
 
         String old = getData(MyApplicationContext.getAppContext());
         System.out.println(old);

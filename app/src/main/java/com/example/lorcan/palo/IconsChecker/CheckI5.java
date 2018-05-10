@@ -53,7 +53,7 @@ public class CheckI5 {
         }
     }
 
-    public void check10(String post, String mapOrProfile, Date date) {
+    public void check5(String post, String mapOrProfile, Date date) {
 
         String old = getData(MyApplicationContext.getAppContext());
         System.out.println(old);
