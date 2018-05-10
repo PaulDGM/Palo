@@ -147,9 +147,6 @@ public class SendIconToDB {
                     punkteJSON.setPoints(points + 5);
                 }
 
-                if (iconNum == "21") {
-                    punkteJSON.setPoints(points + 10);
-                }
             }
 
         }, new Response.ErrorListener() {
