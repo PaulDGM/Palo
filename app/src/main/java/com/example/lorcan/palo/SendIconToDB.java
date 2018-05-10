@@ -127,7 +127,7 @@ public class SendIconToDB {
 
                 if(iconNum == "16") {
                     punkteJSON.setPoints(points + 10);
-                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievement: Marker clicker - Klicke zehn Marker von anderen Palo Usern", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MyApplicationContext.getAppContext(), "Neues Achievement: Marker clicker - Klicke zwanzig Marker von anderen Palo Usern", Toast.LENGTH_LONG).show();
                 }
 
                 if(iconNum == "17") {
