@@ -202,4 +202,26 @@
     <string name="your_username">Your Username:</string>
     <string name="username">Username</string>
 
+    <!-- Achievement toasts -->
+    <string name="achievement_1">New Achievement: Patient Zero - Register at Palo during the first test phase</string>
+    <string name="achievement_2">New Achievement: Pic Yourself - Upload a profile photo</string>
+    <string name="achievement_3">New Achievement: Profile Poster - Post your first status from the profile</string>
+    <string name="achievement_4">New Achievement: Map Poster - Post your first status from the map</string>
+    <string name="achievement_5">New Achievement: Sophisticated Poster - Post a status from your profile and directly from the map</string>
+    <string name="achievement_6">New Achievement: Old But Gold - Post an old status again</string>
+    <string name="achievement_7">New Achievement: Color Changer - Change the marker color</string>
+    <string name="achievement_8">New Achievement: Color Picker - Post a status in 5 different colors</string>
+    <string name="achievement_9">New Achievement: Sophisticated in color - Post a status in all 10 colors</string>
+    <string name="achievement_10">New Achievement: Night Owl - Post a status after 3am</string>
+    <string name="achievement_11">New Achievement: Quick Poster - Post 10 statuses in one day</string>
+    <string name="achievement_12">New Achievement: Traveller - Post two statuses in a row at least 20km apart</string>
+    <string name="achievement_13">New Achievement: Travel Guru - Post two statuses in a row at least 100km apart</string>
+    <string name="achievement_14">New Achievement: Travel God - Post two statuses in a row at least 1000km apart</string>
+    <string name="achievement_15">New Achievement: Perfect Week - Post at least one status per day for one week</string>
+    <string name="achievement_16">New Achievement: Perfect Month - Post at least one status per day for one month</string>
+    <string name="achievement_17">New Achievement: Marker Clicker - Click 20 markers from other Palo users</string>
+    <string name="achievement_18">New Achievement: Profile Viewer - Open the profile of five other Palo-Users</string>
+    <string name="achievement_19">New Achievement: Halfway Done - Reach Level 5</string>
+    <string name="achievement_20">New Achievement: Finisher - Reach Level 10</string>
+
 </resources>

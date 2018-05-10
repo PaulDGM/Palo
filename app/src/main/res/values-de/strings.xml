@@ -203,4 +203,26 @@
     <string name="your_username">Dein Username:</string>
     <string name="username">Username</string>
 
+    <!-- Achievement toasts -->
+    <string name="achievement_1">Neues Achievement: Patient Zero – Registriere dich bei Palo während der ersten Testphase</string>
+    <string name="achievement_2">Neues Achievement: Pic Yourself – Lade ein Profilfoto hoch</string>
+    <string name="achievement_3">Neues Achievement: Profile Poster – Poste deinen ersten Status aus dem Profil</string>
+    <string name="achievement_4">Neues Achievement: Map Poster – Poste deinen ersten Status aus der Karte</string>
+    <string name="achievement_5">Neues Achievement: Sophisticated Poster – Poste einen Status aus deinem Profil und direkt aus der Karte</string>
+    <string name="achievement_6">Neues Achievement: Old but Gold – Poste einen alten Status erneut</string>
+    <string name="achievement_7">Neues Achievement: Color Changer – Ändere die Marker-Farbe</string>
+    <string name="achievement_8">Neues Achievement: Color Picker – Poste einen Status in 5 verschiedenen Farben</string>
+    <string name="achievement_9">Neues Achievement: Sophisticated in color – Poste einen Status in allen 10 Farben</string>
+    <string name="achievement_10">Neues Achievement: Night Owl - Poste einen Status nach 3 Uhr nachts</string>
+    <string name="achievement_11">Neues Achievement: Quick Poster - Poste 10 Status an einem Tag</string>
+    <string name="achievement_12">Neues Achievement: Traveller - Poste zwei Status hintereinander, die mindestens 20km auseinander liegen</string>
+    <string name="achievement_13">Neues Achievement: Travel Guru - Poste zwei Status hintereinander, die mindestens 100km auseinander liegen</string>
+    <string name="achievement_14">Neues Achievement: Travel God - Poste zwei Status hintereinander, die mindestens 1000km auseinander liegen</string>
+    <string name="achievement_15">Neues Achievement: Perfect week – Poste eine Woche lang mindestens einen Status pro Tag</string>
+    <string name="achievement_16">Neues Achievement: Perfect month – Poste einen Monat lang mindestens einen Status pro Tag</string>
+    <string name="achievement_17">Neues Achievement: Marker clicker – Klicke 20 Marker von anderen Palo Usern an</string>
+    <string name="achievement_18">Neues Achievement: Profile Viewer - Öffne das Profil von fünf anderen Palo-Usern</string>
+    <string name="achievement_19">Neues Achievement: Halfway done – Erreiche Level 5</string>
+    <string name="achievement_20">Neues Achievement: Finisher – Erreiche Level 10</string>
+
 </resources>
