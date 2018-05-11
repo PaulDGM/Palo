@@ -17,7 +17,7 @@ public class IconListJSON {
 
     private static void createNewDBDeleteOld(String nameJSON) {
         try {
-            System.out.println("New created DB: " + nameJSON);
+            System.out.println("New created DB Icons Points: " + nameJSON);
             FileWriter file = new FileWriter(MyApplicationContext.getAppContext().getFilesDir().getPath() + "/" + fileName);
 
             file.write(nameJSON);

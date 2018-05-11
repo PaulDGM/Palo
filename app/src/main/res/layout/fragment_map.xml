@@ -72,7 +72,7 @@
             android:clickable="true"
             app:backgroundTint="@color/hhu_blue"
             app:fabSize="mini"
-            app:srcCompat="@android:drawable/ic_menu_edit"
+            app:srcCompat="@drawable/upload"
             tools:ignore="ObsoleteLayoutParam,RelativeOverlap,RtlHardcoded"
             android:focusable="true" />
 

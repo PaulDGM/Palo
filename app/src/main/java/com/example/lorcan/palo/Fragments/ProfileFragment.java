@@ -742,6 +742,28 @@ public class ProfileFragment extends Fragment {
             status = etStatus.getText().toString();
             etStatus.setFilters(new InputFilter[]{new InputFilter.LengthFilter(30)});
 
+            CheckI9 checkI9 = new CheckI9();
+            checkI9.checkI9(marker-1);
+
+            CheckI8 checkI8 = new CheckI8();
+            int markerNum = marker;
+            checkI8.checkI8(markerNum);
+
+            Date date = new Date();
+
+            CheckI10 checkI10 = new CheckI10();
+            checkI10.check10(date);
+
+
+            CheckI11 checkI11 = new CheckI11();
+            checkI11.check11(date);
+
+
+
+
+            CheckI1516 checkI1516 = new CheckI1516();
+            checkI1516.check1516(date);
+
             mFusedLocationClient.getLastLocation()
                     .addOnSuccessListener(getActivity(), new OnSuccessListener<Location>() {
                         @Override
@@ -754,28 +776,9 @@ public class ProfileFragment extends Fragment {
                                 sendStatusToDB statusToDB = new sendStatusToDB();
                                 statusToDB.sendStatus(etStatus.getText().toString(), lat, lng, time, android_id, marker);
                                 LatLng latLng = new LatLng(lat, lng);
-                                CheckI9 checkI9 = new CheckI9();
-                                checkI9.checkI9(marker-1);
-
-                                CheckI8 checkI8 = new CheckI8();
-                                int markerNum = marker;
-                                checkI8.checkI8(markerNum);
-
-                                Date date = new Date();
-
-                                CheckI10 checkI10 = new CheckI10();
-                                checkI10.check10(date);
-
-
-                                CheckI11 checkI11 = new CheckI11();
-                                checkI11.check11(date);
-
 
                                 CheckI121314 checkI121314 = new CheckI121314();
                                 checkI121314.check121314(latLng);
-
-                                CheckI1516 checkI1516 = new CheckI1516();
-                                checkI1516.check1516(date);
 
                                 CurrLocUpdate upFragment = new CurrLocUpdate();
                                 FragmentManager fragmentManager = getFragmentManager();

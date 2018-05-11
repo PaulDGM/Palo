@@ -25,7 +25,7 @@ public class CheckI9 {
 
     private static void createNewDBDeleteOld(String nameJSON) {
         try {
-            System.out.println("New created DB: " + nameJSON);
+            System.out.println("New created DB 10 Markercolors: " + nameJSON);
             FileWriter file = new FileWriter(MyApplicationContext.getAppContext().getFilesDir().getPath() + "/" + fileName);
 
             file.write(nameJSON);
@@ -68,8 +68,9 @@ public class CheckI9 {
             if(isIcon == 0) {
                 JSONObject jsonObject = new JSONObject(old);
                 JSONArray jsonArray = jsonObject.getJSONArray("Color");
-
-                jsonArray.put(indexColor, "1");
+                if(indexColor >= 0) {
+                    jsonArray.put(indexColor, "1");
+                }
                 TelephonyManager tManager = (TelephonyManager) MyApplicationContext.getAppContext().getSystemService(Context.TELEPHONY_SERVICE);
                 if (ActivityCompat.checkSelfPermission(MyApplicationContext.getAppContext(), android.Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
 

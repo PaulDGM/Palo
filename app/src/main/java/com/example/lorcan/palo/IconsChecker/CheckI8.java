@@ -24,7 +24,7 @@ public class CheckI8 {
 
     private static void createNewDBDeleteOld(String nameJSON) {
         try {
-            System.out.println("New created DB: " + nameJSON);
+            System.out.println("New created DB Color Changer: " + nameJSON);
             FileWriter file = new FileWriter(MyApplicationContext.getAppContext().getFilesDir().getPath() + "/" + fileName);
 
             file.write(nameJSON);
@@ -70,14 +70,15 @@ public class CheckI8 {
                 boolean bool1 = true;
 
                 for(int k = 0; k < jsonArray.length(); k++){
-                    if(jsonArray.get(k) == markerNum) {
+                    if(Integer.parseInt(jsonArray.get(k).toString()) == markerNum) {
                         bool1 = false;
+                        break;
                     }
                 }
 
                 if(bool1) {
                     for (int j = 0; j < jsonArray.length(); j++) {
-                        if (jsonArray.get(j) == "0") {
+                        if (jsonArray.get(j).toString() == "0") {
                             jsonArray.put(j, markerNum);
                         }
                     }
@@ -91,7 +92,7 @@ public class CheckI8 {
                 final String android_id = tManager.getDeviceId();
                 boolean bool = true;
                 for(int i = 0 ; i < jsonArray.length(); i++){
-                    if(jsonArray.get(i) == "0"){
+                    if(jsonArray.get(i).toString() == "0"){
                         bool = false;
                         break;
                     }

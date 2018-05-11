@@ -117,9 +117,7 @@ public class CurrLocUpdate extends Fragment  {
                             if (ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                                 ActivityCompat.requestPermissions(getActivity(), new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_ACCESS_FINE_LOCATION);
                                 ActivityCompat.requestPermissions(getActivity(), new String[]{android.Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSION_ACCESS_COARSE_LOCATION);
-                            }else{
-
-                            }
+                            }else {
                                 mFusedLocationClient.getLastLocation()
                                         .addOnSuccessListener(getActivity(), new OnSuccessListener<Location>() {
                                             @Override
@@ -127,6 +125,7 @@ public class CurrLocUpdate extends Fragment  {
                                                 System.out.println("location: " + location);
                                             }
                                         });
+                            }
                         }
 
                         UpdateMapFragment update = UpdateMapFragment.newInstance("1", "2");

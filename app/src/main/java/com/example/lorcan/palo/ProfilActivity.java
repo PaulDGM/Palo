@@ -128,7 +128,7 @@ public class ProfilActivity extends AppCompatActivity {
         iconListLayoutParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
         scrollView.setLayoutParams(iconListLayoutParams);
         scrollView.setForegroundGravity(Gravity.CENTER_HORIZONTAL);
-        iconListLayoutParams.width = 850;
+        iconListLayoutParams.width = 780;
         iconListLayoutParams.height = 550;
         scrollView.setBackgroundColor(Color.LTGRAY);
 
@@ -222,9 +222,6 @@ public class ProfilActivity extends AppCompatActivity {
                 if(i == 22) {
                     iconIV.setBackgroundResource(R.drawable.achievement_finisher); //"icon"+ i-1
                 }
-                if(i == 23) {
-                    iconIV.setBackgroundResource(R.drawable.herz); //"icon"+ i-1
-                }
                 linearLayout1.addView(iconIV);
                 if(cnt == 4){
                     cnt = 0;
@@ -233,7 +230,12 @@ public class ProfilActivity extends AppCompatActivity {
                     linearLayout1.setOrientation(LinearLayout.HORIZONTAL);
                 }
             }
-
+        }
+        if(cnt<4){
+            cnt = 0;
+            linearLayout.addView(linearLayout1);
+            linearLayout1 = new LinearLayout(this);
+            linearLayout1.setOrientation(LinearLayout.HORIZONTAL);
         }
 
 

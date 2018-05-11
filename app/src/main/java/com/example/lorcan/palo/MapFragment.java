@@ -409,7 +409,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
                 markerOptions1 = new MarkerOptions()
                         .position(new LatLng(Double.parseDouble(args.get(i+1)), Double.parseDouble(args.get(i + 2))))
                         .icon(BitmapDescriptorFactory.fromBitmap(smallMarker))
-                        .title(args.get(i+3) + " | " + args.get(i+4) + " | Lvl: " + args.get(i+6))
+                        .title(args.get(i+4) + " | " + args.get(i+3) + " | Lvl: " + args.get(i+6))
                         .snippet(snippet)
                         .anchor(1,1);
 
