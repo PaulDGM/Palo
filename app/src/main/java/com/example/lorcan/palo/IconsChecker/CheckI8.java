@@ -61,7 +61,7 @@ public class CheckI8 {
                 old = getData(MyApplicationContext.getAppContext());
             }
 
-
+            System.out.println("MARKERNUM COLOR IN CHECKI8: " + markerNum);
             IconListJSON iconListJSON = new IconListJSON();
             int isIcon = iconListJSON.getIcon(7);
             if(isIcon == 0) {
@@ -72,7 +72,7 @@ public class CheckI8 {
                 for(int k = 0; k < jsonArray.length(); k++){
                     if(Integer.parseInt(jsonArray.get(k).toString()) == markerNum) {
                         bool1 = false;
-                        break;
+                        k = jsonArray.length(); // save end of loop because k is set to high for next iteration
                     }
                 }
 
@@ -80,6 +80,7 @@ public class CheckI8 {
                     for (int j = 0; j < jsonArray.length(); j++) {
                         if (jsonArray.get(j).toString() == "0") {
                             jsonArray.put(j, markerNum);
+                            j = jsonArray.length(); // save end of loop because j is set to high for next iteration
                         }
                     }
                 }
@@ -94,7 +95,7 @@ public class CheckI8 {
                 for(int i = 0 ; i < jsonArray.length(); i++){
                     if(jsonArray.get(i).toString() == "0"){
                         bool = false;
-                        break;
+                        i = jsonArray.length(); // save end of loop because i is set to high for next iteration
                     }
                 }
                 if(bool){

@@ -62,7 +62,7 @@ public class CheckI9 {
                 old = getData(MyApplicationContext.getAppContext());
             }
 
-
+            System.out.println("MARKERNUM COLOR IN CHECKI9: " + indexColor);
             IconListJSON iconListJSON = new IconListJSON();
             int isIcon = iconListJSON.getIcon(8);
             if(isIcon == 0) {
@@ -77,11 +77,12 @@ public class CheckI9 {
                     return;
                 }
                 final String android_id = tManager.getDeviceId();
+
                 boolean bool = true;
                 for(int i = 0 ; i < jsonArray.length(); i++){
-                    if(jsonArray.get(i) == "0"){
+                    if(jsonArray.get(i).toString() == "0"){
                         bool = false;
-                        break;
+                        i = jsonArray.length(); // save end of loop because i is set to high for next iteration
                     }
                 }
                 if(bool){

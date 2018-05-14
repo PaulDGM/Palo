@@ -752,7 +752,7 @@ public class ProfileFragment extends Fragment {
             Date date = new Date();
 
             CheckI10 checkI10 = new CheckI10();
-            checkI10.check10(date);
+            checkI10.check10();
 
 
             CheckI11 checkI11 = new CheckI11();

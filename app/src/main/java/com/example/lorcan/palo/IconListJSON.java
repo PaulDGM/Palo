@@ -3,6 +3,8 @@ package com.example.lorcan.palo;
 import android.content.Context;
 import android.util.Log;
 
+import com.example.lorcan.palo.IconsChecker.CompareIconsListWithDB;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -70,6 +72,8 @@ public class IconListJSON {
     public int getIcon(int index){
         String old = getData(MyApplicationContext.getAppContext());
         int cnt = 0;
+        CompareIconsListWithDB compareIconsListWithDB = new CompareIconsListWithDB();
+
         try {
             if(old == null){
                 createNewDBDeleteOld("{ \"Icons\" : ['0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0']}");

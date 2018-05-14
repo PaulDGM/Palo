@@ -17,10 +17,7 @@ public class CheckI10 {
     public DateFormat dateTimeFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     public DateFormat timeFormat = new SimpleDateFormat("HH");
     public Date date = new Date();
-    public void check10(Date datePost){
-
-
-        System.out.println(dateTimeFormat.format(date)); //2016/11/16 12:08:43
+    public void check10(){
 
         IconListJSON iconListJSON = new IconListJSON();
         int isIcon = iconListJSON.getIcon(9);

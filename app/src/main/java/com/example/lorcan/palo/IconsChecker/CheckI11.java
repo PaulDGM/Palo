@@ -24,11 +24,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class CheckI11 {
-    @SuppressLint("SimpleDateFormat")
     public DateFormat dateTimeFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-    @SuppressLint("SimpleDateFormat")
     public DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-    @SuppressLint("SimpleDateFormat")
     public DateFormat timeFormat = new SimpleDateFormat("ss");
     public Date date = new Date();
 
@@ -36,7 +33,7 @@ public class CheckI11 {
 
     private static void createNewDBDeleteOld(String nameJSON) {
         try {
-            System.out.println("New created DB: " + nameJSON);
+            System.out.println("New created DB from StatusCounter: " + nameJSON);
             FileWriter file = new FileWriter(MyApplicationContext.getAppContext().getFilesDir().getPath() + "/" + fileName);
 
             file.write(nameJSON);
@@ -70,34 +67,46 @@ public class CheckI11 {
         System.out.println(old);
         try {
             if (old == null) {
-                createNewDBDeleteOld("{ \"StatusCount\" : ['0']}");
+                createNewDBDeleteOld("{ \"StatusCount\" : ['0', '0']}");
                 old = getData(MyApplicationContext.getAppContext());
             }
 
-
             JSONObject jsonObject = new JSONObject(old);
             JSONArray jsonArray = jsonObject.getJSONArray("StatusCount");
+            String lastDate = "";
+            try {
+                lastDate = jsonArray.get(1).toString();
 
-
-            System.out.println(dateTimeFormat.format(date)); //2016/11/16 12:08:43
-
+                jsonArray.put(1, dateFormat.format(datePost));
+            }catch(JSONException je){
+                createNewDBDeleteOld("{ \"StatusCount\" : ['0', '0']}");
+                old = getData(MyApplicationContext.getAppContext());
+            }
             IconListJSON iconListJSON = new IconListJSON();
             int isIcon = iconListJSON.getIcon(10);
+            System.out.println("ICON OF STATUSCOUNT: " + isIcon);
             if (isIcon == 0) {
                 TelephonyManager tManager = (TelephonyManager) MyApplicationContext.getAppContext().getSystemService(Context.TELEPHONY_SERVICE);
                 if (ActivityCompat.checkSelfPermission(MyApplicationContext.getAppContext(), android.Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
                     return;
                 }
+                System.out.println(dateFormat.format(datePost) +" != "+ lastDate);
 
-                if(dateFormat.format(datePost) == dateFormat.format(date)){
+                if(dateFormat.format(datePost).equals(lastDate)){
                     int currentCnt = Integer.parseInt(jsonArray.get(0).toString());
+                    System.out.println("CurrentCount from Statuscounter: " + currentCnt);
                     currentCnt = currentCnt +1;
                     jsonArray.put(0, String.valueOf(currentCnt));
                     createNewDBDeleteOld("{ \"StatusCount\" : "+jsonArray.toString()+"}");
+                }else{
+                    jsonArray.put(0, "0");
+                    jsonArray.put(1, dateFormat.format(datePost));
+                    createNewDBDeleteOld("{ \"StatusCount\" : "+jsonArray.toString()+"}");
                 }
 
+
                 final String android_id = tManager.getDeviceId();
-                if (jsonArray.get(0).toString() == "10") {
+                if (Integer.parseInt(jsonArray.get(0).toString()) == 10) {
                     SendIconToDB sendIconToDB = new SendIconToDB();
                     sendIconToDB.sendIcon("11", android_id);
                     iconListJSON.setIcon(11);

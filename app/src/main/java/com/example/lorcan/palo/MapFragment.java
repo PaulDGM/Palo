@@ -247,7 +247,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
                     checkI5.check5(status, "map",date);
 
                     CheckI10 checkI10 = new CheckI10();
-                    checkI10.check10(date);
+                    checkI10.check10();
 
 
                     CheckI11 checkI11 = new CheckI11();
