@@ -64,12 +64,16 @@ public class CheckI9 {
 
             System.out.println("MARKERNUM COLOR IN CHECKI9: " + indexColor);
             IconListJSON iconListJSON = new IconListJSON();
+
+
             int isIcon = iconListJSON.getIcon(8);
             if(isIcon == 0) {
                 JSONObject jsonObject = new JSONObject(old);
                 JSONArray jsonArray = jsonObject.getJSONArray("Color");
                 if(indexColor >= 0) {
                     jsonArray.put(indexColor, "1");
+                    createNewDBDeleteOld("{ \"Color\" : " + jsonArray.toString() + "}");
+
                 }
                 TelephonyManager tManager = (TelephonyManager) MyApplicationContext.getAppContext().getSystemService(Context.TELEPHONY_SERVICE);
                 if (ActivityCompat.checkSelfPermission(MyApplicationContext.getAppContext(), android.Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
@@ -77,12 +81,15 @@ public class CheckI9 {
                     return;
                 }
                 final String android_id = tManager.getDeviceId();
+                String old1 = getData(MyApplicationContext.getAppContext());
+                JSONObject jsonObject1 = new JSONObject(old1);
+                JSONArray jsonArray1 = jsonObject1.getJSONArray("Color");
 
                 boolean bool = true;
-                for(int i = 0 ; i < jsonArray.length(); i++){
-                    if(jsonArray.get(i).toString() == "0"){
+                for(int i = 0 ; i < jsonArray1.length(); i++){
+                    if(Integer.parseInt(jsonArray1.get(i).toString()) == 0){
                         bool = false;
-                        i = jsonArray.length(); // save end of loop because i is set to high for next iteration
+                        i = jsonArray1.length();// save end of loop because i is set to high for next iteration
                     }
                 }
                 if(bool){

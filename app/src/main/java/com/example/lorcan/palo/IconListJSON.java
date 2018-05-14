@@ -69,6 +69,25 @@ public class IconListJSON {
         }
     }
 
+
+    public void resetIcon(int index){
+        String old = getData(MyApplicationContext.getAppContext());
+        System.out.println(old);
+        try {
+            if(old == null){
+                createNewDBDeleteOld("{ \"Icons\" : ['0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0']}");
+                old = getData(MyApplicationContext.getAppContext());
+            }
+            JSONObject jsonObject = new JSONObject(old);
+            JSONArray jsonArray = jsonObject.getJSONArray("Icons");
+
+            jsonArray.put(index, "0");
+            createNewDBDeleteOld("{ \"Icons\" : "+jsonArray.toString()+"}");
+
+        }catch(JSONException e){
+            e.printStackTrace();
+        }
+    }
     public int getIcon(int index){
         String old = getData(MyApplicationContext.getAppContext());
         int cnt = 0;

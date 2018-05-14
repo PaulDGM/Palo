@@ -64,6 +64,10 @@ public class CheckI8 {
             System.out.println("MARKERNUM COLOR IN CHECKI8: " + markerNum);
             IconListJSON iconListJSON = new IconListJSON();
             int isIcon = iconListJSON.getIcon(7);
+            if(isIcon != 0){
+                iconListJSON.resetIcon(7);
+            }
+            isIcon = iconListJSON.getIcon(7);
             if(isIcon == 0) {
                 JSONObject jsonObject = new JSONObject(old);
                 JSONArray jsonArray = jsonObject.getJSONArray("Color");
@@ -74,11 +78,12 @@ public class CheckI8 {
                         bool1 = false;
                         k = jsonArray.length(); // save end of loop because k is set to high for next iteration
                     }
+                    System.out.println("Is " + markerNum + " in " + jsonArray.toString()+ " = " + bool1 +" // I8 For-Loop i: " + k);
                 }
 
                 if(bool1) {
                     for (int j = 0; j < jsonArray.length(); j++) {
-                        if (jsonArray.get(j).toString() == "0") {
+                        if (Integer.parseInt(jsonArray.get(j).toString()) == 0) {
                             jsonArray.put(j, markerNum);
                             j = jsonArray.length(); // save end of loop because j is set to high for next iteration
                         }
@@ -93,7 +98,7 @@ public class CheckI8 {
                 final String android_id = tManager.getDeviceId();
                 boolean bool = true;
                 for(int i = 0 ; i < jsonArray.length(); i++){
-                    if(jsonArray.get(i).toString() == "0"){
+                    if(Integer.parseInt(jsonArray.get(i).toString()) == 0){
                         bool = false;
                         i = jsonArray.length(); // save end of loop because i is set to high for next iteration
                     }
