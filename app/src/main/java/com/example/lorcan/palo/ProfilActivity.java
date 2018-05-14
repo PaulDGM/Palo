@@ -257,12 +257,6 @@ public class ProfilActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
         //----------------
         scrollView.addView(linearLayout);
 
@@ -280,9 +274,10 @@ public class ProfilActivity extends AppCompatActivity {
     public void setPointsAndWidth(String pointsStr){
         pointsStr = pointsStr.trim();
         points = Integer.parseInt(pointsStr);
-        txtView.setText(String.valueOf("   P: " + points));
         LevelPointsConverter levelPointsConverter = new LevelPointsConverter();
         lvl = levelPointsConverter.convertPointsToLevel(points);
+        txtView.setText(String.valueOf("   Level: "+lvl+ " // Punkte: " + points));
+
         int x = 0;
         int y = 0;
         if(lvl == "1"){
