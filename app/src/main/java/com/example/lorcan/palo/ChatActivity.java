@@ -188,15 +188,11 @@ public class ChatActivity extends AppCompatActivity {
                     ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.INTERNET}, PERMISSION_INTERNET_STATE);
 
 
-                } else {
-
                 }
             }
             case PERMISSION_INTERNET_STATE: {
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                } else {
 
                 }
             }

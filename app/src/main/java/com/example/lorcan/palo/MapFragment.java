@@ -343,65 +343,256 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
 
             int height = 125;
             int width = 170;
+
             for (int i = 2; i < args.size(); i = i + 7) {
+                int lvl = Integer.parseInt(args.get(i+6));
             if(args.get(i+5).equals("1")) {
                 BitmapDrawable bitmapDraw = (BitmapDrawable) getResources().getDrawable(R.drawable.marker1);
 
                 b = bitmapDraw.getBitmap();
-                smallMarker = Bitmap.createScaledBitmap(b, width, height, false);
+
+                if(lvl < 3){
+
+                    smallMarker = Bitmap.createScaledBitmap(b, 155, 110, false);
+                }
+                if(lvl > 2 && lvl < 6){
+                    smallMarker = Bitmap.createScaledBitmap(b, width, height, false);
+
+                }
+                if(lvl > 5 && lvl < 8){
+                    smallMarker = Bitmap.createScaledBitmap(b, 195, 140, false);
+                }
+                if(lvl > 7){
+                    smallMarker = Bitmap.createScaledBitmap(b, 210, 165, false);
+                }
+
+
             }
             else if(args.get(i+5).equals("2")) {
-                    BitmapDrawable bitmapDraw = (BitmapDrawable) getResources().getDrawable(R.drawable.marker2);
+                BitmapDrawable bitmapDraw = (BitmapDrawable) getResources().getDrawable(R.drawable.marker2);
+                b = bitmapDraw.getBitmap();
 
-                    b = bitmapDraw.getBitmap();
+                if(lvl < 3){
+
+                    smallMarker = Bitmap.createScaledBitmap(b, 155, 110, false);
+                }
+                if(lvl > 2 && lvl < 6){
                     smallMarker = Bitmap.createScaledBitmap(b, width, height, false);
+
+                }
+                if(lvl > 5 && lvl < 8){
+                    smallMarker = Bitmap.createScaledBitmap(b, 195, 140, false);
+                }
+                if(lvl > 7){
+                    smallMarker = Bitmap.createScaledBitmap(b, 210, 165, false);
+                }
+
+
+
             }
             else if(args.get(i+5).equals("3")) {
-                    BitmapDrawable bitmapDraw = (BitmapDrawable) getResources().getDrawable(R.drawable.marker3);
+                BitmapDrawable bitmapDraw = (BitmapDrawable) getResources().getDrawable(R.drawable.marker3);
+                b = bitmapDraw.getBitmap();
 
-                    b = bitmapDraw.getBitmap();
+                if(lvl < 3){
+
+                    smallMarker = Bitmap.createScaledBitmap(b, 155, 110, false);
+                }
+                if(lvl > 2 && lvl < 6){
                     smallMarker = Bitmap.createScaledBitmap(b, width, height, false);
+
+                }
+                if(lvl > 5 && lvl < 8){
+                    smallMarker = Bitmap.createScaledBitmap(b, 195, 140, false);
+                }
+                if(lvl > 7){
+                    smallMarker = Bitmap.createScaledBitmap(b, 210, 165, false);
+                }
+
+
+
             }
             else if(args.get(i+5).equals("4")) {
-                    BitmapDrawable bitmapDraw = (BitmapDrawable) getResources().getDrawable(R.drawable.marker4);
+                BitmapDrawable bitmapDraw = (BitmapDrawable) getResources().getDrawable(R.drawable.marker4);
 
-                    b = bitmapDraw.getBitmap();
+
+                b = bitmapDraw.getBitmap();
+                if(lvl < 3){
+
+                    smallMarker = Bitmap.createScaledBitmap(b, 155, 110, false);
+                }
+                if(lvl > 2 && lvl < 6){
                     smallMarker = Bitmap.createScaledBitmap(b, width, height, false);
+
+                }
+                if(lvl > 5 && lvl < 8){
+                    smallMarker = Bitmap.createScaledBitmap(b, 195, 140, false);
+                }
+                if(lvl > 7){
+                    smallMarker = Bitmap.createScaledBitmap(b, 210, 165, false);
+                }
+
+
             }
                 else if(args.get(i+5).equals("5")) {
-                    BitmapDrawable bitmapDraw = (BitmapDrawable) getResources().getDrawable(R.drawable.marker5);
+                BitmapDrawable bitmapDraw = (BitmapDrawable) getResources().getDrawable(R.drawable.marker5);
 
-                    b = bitmapDraw.getBitmap();
+                b = bitmapDraw.getBitmap();
+
+                if(lvl < 3){
+
+                    smallMarker = Bitmap.createScaledBitmap(b, 155, 110, false);
+                }
+                if(lvl > 2 && lvl < 6){
                     smallMarker = Bitmap.createScaledBitmap(b, width, height, false);
+
+                }
+                if(lvl > 5 && lvl < 8){
+                    smallMarker = Bitmap.createScaledBitmap(b, 195, 140, false);
+                }
+                if(lvl > 7){
+                    smallMarker = Bitmap.createScaledBitmap(b, 210, 165, false);
+                }
+
+
+
                 }
                 else if(args.get(i+5).equals("6")) {
-                    BitmapDrawable bitmapDraw = (BitmapDrawable) getResources().getDrawable(R.drawable.marker6);
-                    b = bitmapDraw.getBitmap();
+                BitmapDrawable bitmapDraw = (BitmapDrawable) getResources().getDrawable(R.drawable.marker6);
+
+
+                b = bitmapDraw.getBitmap();
+                if(lvl < 3){
+
+                    smallMarker = Bitmap.createScaledBitmap(b, 155, 110, false);
+                }
+                if(lvl > 2 && lvl < 6){
                     smallMarker = Bitmap.createScaledBitmap(b, width, height, false);
+
+                }
+                if(lvl > 5 && lvl < 8){
+                    smallMarker = Bitmap.createScaledBitmap(b, 195, 140, false);
+                }
+                if(lvl > 7){
+                    smallMarker = Bitmap.createScaledBitmap(b, 210, 165, false);
+                }
+
+
+
                 }
                 else if(args.get(i+5).equals("7")) {
-                    BitmapDrawable bitmapDraw = (BitmapDrawable) getResources().getDrawable(R.drawable.marker7);
-                    b = bitmapDraw.getBitmap();
+                BitmapDrawable bitmapDraw = (BitmapDrawable) getResources().getDrawable(R.drawable.marker7);
+
+                b = bitmapDraw.getBitmap();
+
+                if(lvl < 3){
+
+                    smallMarker = Bitmap.createScaledBitmap(b, 155, 110, false);
+                }
+                if(lvl > 2 && lvl < 6){
                     smallMarker = Bitmap.createScaledBitmap(b, width, height, false);
+
+                }
+                if(lvl > 5 && lvl < 8){
+                    smallMarker = Bitmap.createScaledBitmap(b, 195, 140, false);
+                }
+                if(lvl > 7){
+                    smallMarker = Bitmap.createScaledBitmap(b, 210, 165, false);
+                }
+
+
+
                 }
                 else if(args.get(i+5).equals("8")) {
-                    BitmapDrawable bitmapDraw = (BitmapDrawable) getResources().getDrawable(R.drawable.marker8);
-                    b = bitmapDraw.getBitmap();
+                BitmapDrawable bitmapDraw = (BitmapDrawable) getResources().getDrawable(R.drawable.marker8);
+
+
+                b = bitmapDraw.getBitmap();
+                if(lvl < 3){
+
+                    smallMarker = Bitmap.createScaledBitmap(b, 155, 110, false);
+                }
+                if(lvl > 2 && lvl < 6){
                     smallMarker = Bitmap.createScaledBitmap(b, width, height, false);
+
+                }
+                if(lvl > 5 && lvl < 8){
+                    smallMarker = Bitmap.createScaledBitmap(b, 195, 140, false);
+                }
+                if(lvl > 7){
+                    smallMarker = Bitmap.createScaledBitmap(b, 210, 165, false);
+                }
+
+
+
                 }
                 else if(args.get(i+5).equals("9")) {
-                    BitmapDrawable bitmapDraw = (BitmapDrawable) getResources().getDrawable(R.drawable.marker9);
-                    b = bitmapDraw.getBitmap();
+                BitmapDrawable bitmapDraw = (BitmapDrawable) getResources().getDrawable(R.drawable.marker9);
+
+
+                b = bitmapDraw.getBitmap();
+                if(lvl < 3){
+
+                    smallMarker = Bitmap.createScaledBitmap(b, 155, 110, false);
+                }
+                if(lvl > 2 && lvl < 6){
                     smallMarker = Bitmap.createScaledBitmap(b, width, height, false);
+
+                }
+                if(lvl > 5 && lvl < 8){
+                    smallMarker = Bitmap.createScaledBitmap(b, 195, 140, false);
+                }
+                if(lvl > 7){
+                    smallMarker = Bitmap.createScaledBitmap(b, 210, 165, false);
+                }
+
+
+
                 }
                 else if(args.get(i+5).equals("10")) {
-                    BitmapDrawable bitmapDraw = (BitmapDrawable) getResources().getDrawable(R.drawable.marker10);
-                    b = bitmapDraw.getBitmap();
+                BitmapDrawable bitmapDraw = (BitmapDrawable) getResources().getDrawable(R.drawable.marker10);
+
+                b = bitmapDraw.getBitmap();
+
+                if(lvl < 3){
+
+                    smallMarker = Bitmap.createScaledBitmap(b, 155, 110, false);
+                }
+                if(lvl > 2 && lvl < 6){
                     smallMarker = Bitmap.createScaledBitmap(b, width, height, false);
+
+                }
+                if(lvl > 5 && lvl < 8){
+                    smallMarker = Bitmap.createScaledBitmap(b, 195, 140, false);
+                }
+                if(lvl > 7){
+                    smallMarker = Bitmap.createScaledBitmap(b, 210, 165, false);
+                }
+
+
+
                 }else{
                 BitmapDrawable bitmapDraw = (BitmapDrawable) getResources().getDrawable(R.drawable.element2mdpi);
+
+
                 b = bitmapDraw.getBitmap();
-                smallMarker = Bitmap.createScaledBitmap(b, width, height, false);
+                if(lvl < 3){
+
+                    smallMarker = Bitmap.createScaledBitmap(b, 155, 110, false);
+                }
+                if(lvl > 2 && lvl < 6){
+                    smallMarker = Bitmap.createScaledBitmap(b, width, height, false);
+
+                }
+                if(lvl > 5 && lvl < 8){
+                    smallMarker = Bitmap.createScaledBitmap(b, 195, 140, false);
+                }
+                if(lvl > 7){
+                    smallMarker = Bitmap.createScaledBitmap(b, 210, 165, false);
+                }
+
+
+
                 }
 
 
