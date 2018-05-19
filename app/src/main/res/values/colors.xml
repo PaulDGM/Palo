@@ -3,7 +3,7 @@
     <color name="hhu_blue">#006ab3</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303f9f</color>
-    <color name="colorAccent">#ffffff</color>
+    <color name="colorAccent">#f73d3d</color>
     <color name="colorFooter">#c0c0c0</color>
     <color name="colorScrollview">#74006ab3</color>
 
@@ -34,5 +34,6 @@
     <color name="color_marker9">#004B00</color>
     <color name="color_marker10">#D8005F</color>
     <color name="no_marker">#e29b9b9b</color>
+    <color name="background_material_light">#0198ff</color>
 
 </resources>

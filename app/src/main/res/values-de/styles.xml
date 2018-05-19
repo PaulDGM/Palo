@@ -8,9 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:colorForeground">@android:color/white</item>
+        <item name="android:colorForeground">@android:color/primary_text_dark</item>
         <item name="android:navigationBarColor">@android:color/white</item>
         <item name="android:statusBarColor">?android:attr/colorPrimaryDark</item>
+        <item name="android:colorBackground">#006Ab3</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
