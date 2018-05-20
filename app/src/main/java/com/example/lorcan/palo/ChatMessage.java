@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 
@@ -261,7 +262,11 @@ public class ChatMessage {
         final String android_id = telephonyManager.getDeviceId();
         this.android_id = android_id;
         this.nickname = nickname;
-        new ResponseTask1(chatActivity).execute();
+        try {
+            new ResponseTask1(chatActivity).execute();
+        }catch(OutOfMemoryError error){
+            chatActivity.recreate();
+        }
     }
 
     @SuppressLint("StaticFieldLeak")
@@ -282,6 +287,7 @@ public class ChatMessage {
                     responseIsMessage = response;
                     System.out.println("RESPONSE CHAT DB:" + response);
                     handleResponse1(responseIsMessage, chatActivity);
+
                 }
 
             }, new Response.ErrorListener() {
@@ -482,5 +488,7 @@ public class ChatMessage {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         MyApplicationContext.getAppContext().startActivity(intent);
     }
+
+
 
 }

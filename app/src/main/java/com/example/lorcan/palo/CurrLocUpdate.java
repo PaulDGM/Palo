@@ -152,13 +152,13 @@ public class CurrLocUpdate extends Fragment  {
                                                 update.getTag()
                                         ).commitAllowingStateLoss();
                             } else {
+
                                 if (Build.VERSION.SDK_INT >= 11) {
                                     CurrLocUpdate.this.getActivity().recreate();
                                 } else {
                                     CurrLocUpdate.this.getActivity().finish();
                                     CurrLocUpdate.this.getActivity().startActivity(CurrLocUpdate.this.getActivity().getIntent());
                                 }
-
                                 //open settings to activate GPS
                                 //displayLocationSettingsRequest(MyApplicationContext.getAppContext());
                             }
