@@ -57,6 +57,7 @@ public class CheckI121314 {
         public void check121314(LatLng latLngNew){
             String latNew = String.valueOf(latLngNew.latitude);
             String lngNew = String.valueOf(latLngNew.longitude);
+            System.out.println(">>>>>>LATNEW: "+latNew);
             String old = getData(MyApplicationContext.getAppContext());
             System.out.println(old);
             try {
@@ -88,7 +89,7 @@ public class CheckI121314 {
                 int isIcon13 = iconListJSON.getIcon(12);
 
                     float distance = checkForDistance(latLngOld, latLngNew);
-
+                    System.out.println(">>>>>Distance: " +distance);
                     if (distance >= 20000.0 && isIcon11 == 0) {
                         SendIconToDB sendIconToDB = new SendIconToDB();
                         sendIconToDB.sendIcon("11", android_id);
@@ -104,8 +105,9 @@ public class CheckI121314 {
                         sendIconToDB.sendIcon("13", android_id);
                         iconListJSON.setIcon(13);
                     }
-                    createNewDBDeleteOld("{ \"LastSpot\" : " + jsonArray.toString() + "}");
+
                 }
+                createNewDBDeleteOld("{ \"LastSpot\" : " + jsonArray.toString() + "}");
             }catch(JSONException e){
                 e.printStackTrace();
             }
