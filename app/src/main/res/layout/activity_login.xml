@@ -25,8 +25,8 @@
             android:id="@+id/email_login_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
             android:layout_marginTop="100dp"
+            android:gravity="center_horizontal"
             android:orientation="vertical">
 
             <ImageView
@@ -39,12 +39,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
+                android:background="@color/cast_expanded_controller_progress_text_color"
                 android:gravity="center_horizontal">
 
                 <AutoCompleteTextView
                     android:id="@+id/email"
                     android:layout_width="300dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="47dp"
                     android:backgroundTint="@color/cast_expanded_controller_text_color"
                     android:hint="E-Mail (optional)"
                     android:inputType="textEmailAddress"
@@ -57,22 +58,23 @@
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="57dp"
                 android:layout_marginTop="30dp"
+                android:background="@color/cast_expanded_controller_progress_text_color"
                 android:gravity="center_horizontal">
 
                 <EditText
                     android:id="@+id/nickname"
                     android:layout_width="300dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="43dp"
+                    android:digits="0,1,2,3,4,5,6,7,8,9,*,qwertzuiopüasdfghjklöäyxcvbnm,QWERTZUIOPÜASDFGHJKLÖÄYXCVBNMß,.,,"
                     android:hint="Nickname"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
                     android:inputType="text"
+                    android:maxLength="50"
                     android:maxLines="1"
                     android:textSize="15sp"
-                    android:digits="0,1,2,3,4,5,6,7,8,9,*,qwertzuiopüasdfghjklöäyxcvbnm,QWERTZUIOPÜASDFGHJKLÖÄYXCVBNMß,.,,"
-                    android:maxLength="50"
                     tools:ignore="HardcodedText" />
 
             </android.support.design.widget.TextInputLayout>

@@ -35,7 +35,6 @@ public class StartActivity extends AppCompatActivity {
     public final int PERMISSION_INTERNET_STATE = 2;
     public VersionControl versionControl = new VersionControl();
 
-    @SuppressLint("HardwareIds")
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,10 +55,16 @@ public class StartActivity extends AppCompatActivity {
 
     }
 
-    public void checkID(final String android_id) {
+    public void checkID() {
 
         System.out.println("HELLO CHECK ID");
-        this.android_id = android_id;
+        TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.READ_PHONE_STATE}, PERMISSION_READ_PHONE_STATE);
+            return;
+        }
+        android_id = telephonyManager.getDeviceId();
         new isIDTask().execute();
     }
 
@@ -71,7 +76,7 @@ public class StartActivity extends AppCompatActivity {
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.INTERNET}, PERMISSION_INTERNET_STATE);
-                    checkID(android_id);
+                    checkID();
 
                 } else {
 
@@ -81,7 +86,7 @@ public class StartActivity extends AppCompatActivity {
             case PERMISSION_INTERNET_STATE: {
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    checkID(android_id);
+                    checkID();
                 } else {
 
                     restart();

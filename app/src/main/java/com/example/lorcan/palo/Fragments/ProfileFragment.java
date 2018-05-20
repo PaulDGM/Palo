@@ -764,6 +764,8 @@ public class ProfileFragment extends Fragment {
             CheckI1516 checkI1516 = new CheckI1516();
             checkI1516.check1516(date);
 
+            mFusedLocationClient = LocationServices.getFusedLocationProviderClient(MyApplicationContext.getAppContext());
+
             mFusedLocationClient.getLastLocation()
                     .addOnSuccessListener(getActivity(), new OnSuccessListener<Location>() {
                         @Override

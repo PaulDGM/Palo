@@ -12,6 +12,7 @@ import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -154,8 +155,15 @@ public class CurrLocUpdate extends Fragment  {
                                             update.getTag()
                                     ).commitAllowingStateLoss();
                         } else {
+                            if (Build.VERSION.SDK_INT >= 11) {
+                                CurrLocUpdate.this.getActivity().recreate();
+                            } else {
+                                CurrLocUpdate.this.getActivity().finish();
+                                CurrLocUpdate.this.getActivity().startActivity(CurrLocUpdate.this.getActivity().getIntent());
+                            }
+
                             //open settings to activate GPS
-                            displayLocationSettingsRequest(MyApplicationContext.getAppContext());
+                            //displayLocationSettingsRequest(MyApplicationContext.getAppContext());
                         }
 
 
