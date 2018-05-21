@@ -12,7 +12,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class sendStatusToDB {
+public class
+sendStatusToDB {
 
     private static final String URL = "http://palo.square7.ch/setStatusGami.php";
 

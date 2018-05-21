@@ -1,6 +1,5 @@
 package com.example.lorcan.palo;
 
-import android.app.AlertDialog;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -69,10 +68,6 @@ public class SendIconToDB {
                 System.out.println("Response setIcon: " + response);
 
                 if(iconNum == "1") {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(MyApplicationContext.getAppContext());
-                    builder.setTitle("Neues Achievement!");
-                    builder.setMessage(R.string.achievement_1);
-                    builder.show();
                     Toast.makeText(MyApplicationContext.getAppContext(), R.string.achievement_1, Toast.LENGTH_LONG).show();
                 }
                 if(iconNum == "2") {

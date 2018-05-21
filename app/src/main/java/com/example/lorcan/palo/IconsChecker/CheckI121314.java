@@ -90,17 +90,22 @@ public class CheckI121314 {
 
                     float distance = checkForDistance(latLngOld, latLngNew);
                     System.out.println(">>>>>Distance: " +distance);
-                    if (distance >= 20000.0 && isIcon11 == 0) {
+                    if (distance >= 20000 && isIcon11 == 0) {
+                        System.out.println("distance größer als 20k");
                         SendIconToDB sendIconToDB = new SendIconToDB();
                         sendIconToDB.sendIcon("11", android_id);
                         iconListJSON.setIcon(11);
+                    }else{
+                        System.out.println(distance +"<<<<<>>>>>"+ isIcon11);
                     }
-                    if (distance >= 100000.0 && isIcon12 == 0) {
+                    if (distance >= 100000 && isIcon12 == 0) {
+                        System.out.println("distance größer als 100k");
                         SendIconToDB sendIconToDB = new SendIconToDB();
-                        sendIconToDB.sendIcon("13", android_id);
-                        iconListJSON.setIcon(11);
+                        sendIconToDB.sendIcon("12", android_id);
+                        iconListJSON.setIcon(12);
                     }
-                    if (distance >= 1000000.0 && isIcon13 == 0) {
+                    if (distance >= 1000000 && isIcon13 == 0) {
+                        System.out.println("distance größer als 1000k");
                         SendIconToDB sendIconToDB = new SendIconToDB();
                         sendIconToDB.sendIcon("13", android_id);
                         iconListJSON.setIcon(13);

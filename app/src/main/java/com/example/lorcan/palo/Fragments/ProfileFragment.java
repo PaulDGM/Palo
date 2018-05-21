@@ -241,7 +241,7 @@ public class ProfileFragment extends Fragment {
             android_id = tManager.getDeviceId();
         }
 
-        DateFormat dateFormat = new SimpleDateFormat("HH:mm");
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm DD.MM.YY");
         Date date = new Date();
         time = dateFormat.format(date);
 
