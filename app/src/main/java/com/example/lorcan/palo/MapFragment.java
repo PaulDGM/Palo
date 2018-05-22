@@ -240,7 +240,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
                     punkteJSON.setPoints(points + 1);
 
                     //-----------------------
-                    DateFormat dateFormat = new SimpleDateFormat("HH:mm DD.MM.YY");
+                    DateFormat dateFormat = new SimpleDateFormat("HH:mm dd.MM.yy");
                     Date date = new Date();
 
                     CheckI5 checkI5 = new CheckI5();
