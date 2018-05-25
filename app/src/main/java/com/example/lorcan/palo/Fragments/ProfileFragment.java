@@ -373,7 +373,7 @@ public class ProfileFragment extends Fragment {
         final MarkerColorJSON markerColorJSON = new MarkerColorJSON();
         PunkteJSON punkteJSON = new PunkteJSON();
         int points = punkteJSON.getPoints();
-        if (points == 1) {
+        if (points >= 0) {
             fab_marker1.setBackgroundColor(getResources().getColor(R.color.color_marker1));
             fab_marker1.setOnClickListener(new View.OnClickListener() {
                 @Override
