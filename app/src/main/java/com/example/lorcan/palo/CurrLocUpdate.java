@@ -173,7 +173,7 @@ public class CurrLocUpdate extends Fragment  {
                                 builder.setNeutralButton("Profil", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
-
+                                        dialogInterface.dismiss();
                                         ProfileFragment profileFragment = new ProfileFragment();
                                         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                                         fragmentManager.beginTransaction()

@@ -96,9 +96,8 @@ public class ProfilActivity extends AppCompatActivity {
             ivImage.setImageBitmap(Bitmap.createScaledBitmap(decodedByte, 400, 400, false));
             ivImage.setBackground(getResources().getDrawable(R.drawable.layout_bg));
         }else{
-            Toast.makeText(MyApplicationContext.getAppContext(), "Es ist leider kein Profilbild vorhanden.", Toast.LENGTH_SHORT).show();
-            ProfilActivity profilActivity = this;
-            profilActivity.finish();
+            ivImage.setImageDrawable(getResources().getDrawable(R.drawable.trophy));
+            ivImage.setBackgroundColor(getResources().getColor(R.color.hhu_blue));
         }
 
         TextView statusTextView = new TextView(this);
