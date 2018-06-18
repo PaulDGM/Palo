@@ -27,6 +27,8 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
+import de.app.prime.palo.GetFromDatabase.GetUsernameFromDB;
+
 public class StartActivity extends AppCompatActivity {
 
     private static final String strUrl = "http://palo.square7.ch/checkIDIsInDBGami.php";
@@ -205,7 +207,15 @@ public class StartActivity extends AppCompatActivity {
                     .show();
         }else{
             if (res.equals("1")) {
+
+                GetUsernameFromDB getUsernameFromDB = new GetUsernameFromDB();
+                String username = getUsernameFromDB.getName();
+                UsernameJSON usernameJSON = new UsernameJSON();
+                usernameJSON.setUserName(username);
+
                 startMain();
+                this.finish();
+
             } else {
                 start();
             }

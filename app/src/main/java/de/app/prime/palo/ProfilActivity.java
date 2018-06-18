@@ -59,6 +59,10 @@ public class ProfilActivity extends AppCompatActivity {
 
         Serializable k = getIntent().getSerializableExtra("name");
         name = k.toString();
+        if(name == null || name.equals("null")){
+            UsernameJSON usernameJSON = new UsernameJSON();
+            name = usernameJSON.getUserName();
+        }
         ProfilActivity.this.setTitle("Profil von " + name);
 
         GetProfilInfoFromDB getProfilInfoFromDB = new GetProfilInfoFromDB();
@@ -222,7 +226,7 @@ public class ProfilActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             AlertDialog.Builder alert = new AlertDialog.Builder(ProfilActivity.this, android.R.style.Theme_Material_Dialog_Alert);
-                            alert.setMessage("ICON 1");
+                            alert.setMessage("Old But Gold - Post an old status again");
                             alert.setPositiveButton("Ok", null);
                             alert.show();
                         }
@@ -235,7 +239,7 @@ public class ProfilActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             AlertDialog.Builder alert = new AlertDialog.Builder(ProfilActivity.this, android.R.style.Theme_Material_Dialog_Alert);
-                            alert.setMessage("ICON 1");
+                            alert.setMessage("Color Changer - Change the marker color");
                             alert.setPositiveButton("Ok", null);
                             alert.show();
                         }
@@ -248,7 +252,7 @@ public class ProfilActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             AlertDialog.Builder alert = new AlertDialog.Builder(ProfilActivity.this, android.R.style.Theme_Material_Dialog_Alert);
-                            alert.setMessage("ICON 1");
+                            alert.setMessage("Color Picker - Post a status in 5 different colors");
                             alert.setPositiveButton("Ok", null);
                             alert.show();
                         }
@@ -261,7 +265,7 @@ public class ProfilActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             AlertDialog.Builder alert = new AlertDialog.Builder(ProfilActivity.this, android.R.style.Theme_Material_Dialog_Alert);
-                            alert.setMessage("ICON 1");
+                            alert.setMessage("Sophisticated in color - Post a status in all 10 colors");
                             alert.setPositiveButton("Ok", null);
                             alert.show();
                         }
@@ -274,7 +278,7 @@ public class ProfilActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             AlertDialog.Builder alert = new AlertDialog.Builder(ProfilActivity.this, android.R.style.Theme_Material_Dialog_Alert);
-                            alert.setMessage("ICON 1");
+                            alert.setMessage("Night Owl - Post a status after 3am");
                             alert.setPositiveButton("Ok", null);
                             alert.show();
                         }
@@ -287,7 +291,7 @@ public class ProfilActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             AlertDialog.Builder alert = new AlertDialog.Builder(ProfilActivity.this, android.R.style.Theme_Material_Dialog_Alert);
-                            alert.setMessage("ICON 1");
+                            alert.setMessage("Quick Poster - Post 10 statuses in one day");
                             alert.setPositiveButton("Ok", null);
                             alert.show();
                         }
@@ -300,7 +304,7 @@ public class ProfilActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             AlertDialog.Builder alert = new AlertDialog.Builder(ProfilActivity.this, android.R.style.Theme_Material_Dialog_Alert);
-                            alert.setMessage("ICON 1");
+                            alert.setMessage("Traveller - Post two statuses in a row at least 20km apart");
                             alert.setPositiveButton("Ok", null);
                             alert.show();
                         }
@@ -313,7 +317,7 @@ public class ProfilActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             AlertDialog.Builder alert = new AlertDialog.Builder(ProfilActivity.this, android.R.style.Theme_Material_Dialog_Alert);
-                            alert.setMessage("ICON 1");
+                            alert.setMessage("Travel Guru - Post two statuses in a row at least 100km apart");
                             alert.setPositiveButton("Ok", null);
                             alert.show();
                         }
@@ -326,7 +330,7 @@ public class ProfilActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             AlertDialog.Builder alert = new AlertDialog.Builder(ProfilActivity.this, android.R.style.Theme_Material_Dialog_Alert);
-                            alert.setMessage("ICON 1");
+                            alert.setMessage("Travel God - Post two statuses in a row at least 1000km apart");
                             alert.setPositiveButton("Ok", null);
                             alert.show();
                         }
@@ -339,7 +343,7 @@ public class ProfilActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             AlertDialog.Builder alert = new AlertDialog.Builder(ProfilActivity.this, android.R.style.Theme_Material_Dialog_Alert);
-                            alert.setMessage("ICON 1");
+                            alert.setMessage("Perfect Week - Post at least one status per day for one week");
                             alert.setPositiveButton("Ok", null);
                             alert.show();
                         }
@@ -351,7 +355,7 @@ public class ProfilActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             AlertDialog.Builder alert = new AlertDialog.Builder(ProfilActivity.this, android.R.style.Theme_Material_Dialog_Alert);
-                            alert.setMessage("ICON 1");
+                            alert.setMessage("Perfect Month - Post at least one status per day for one month");
                             alert.setPositiveButton("Ok", null);
                             alert.show();
                         }
@@ -363,7 +367,7 @@ public class ProfilActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             AlertDialog.Builder alert = new AlertDialog.Builder(ProfilActivity.this, android.R.style.Theme_Material_Dialog_Alert);
-                            alert.setMessage("ICON 1");
+                            alert.setMessage("Marker Clicker - Click 20 markers from other Palo users");
                             alert.setPositiveButton("Ok", null);
                             alert.show();
                         }
@@ -375,7 +379,7 @@ public class ProfilActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             AlertDialog.Builder alert = new AlertDialog.Builder(ProfilActivity.this, android.R.style.Theme_Material_Dialog_Alert);
-                            alert.setMessage("ICON 1");
+                            alert.setMessage("Profile Viewer - Open the profile of five other Palo-Users");
                             alert.setPositiveButton("Ok", null);
                             alert.show();
                         }
@@ -387,7 +391,7 @@ public class ProfilActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             AlertDialog.Builder alert = new AlertDialog.Builder(ProfilActivity.this, android.R.style.Theme_Material_Dialog_Alert);
-                            alert.setMessage("ICON 1");
+                            alert.setMessage("Halfway Done - Reach Level 5");
                             alert.setPositiveButton("Ok", null);
                             alert.show();
                         }
@@ -399,7 +403,7 @@ public class ProfilActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             AlertDialog.Builder alert = new AlertDialog.Builder(ProfilActivity.this, android.R.style.Theme_Material_Dialog_Alert);
-                            alert.setMessage("ICON 1");
+                            alert.setMessage("Finisher - Reach Level 10");
                             alert.setPositiveButton("Ok", null);
                             alert.show();
                         }

@@ -74,7 +74,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="AIzaSyCG6gRz9mEr8QWiPeXnxSWEwPkD1nWCtq0" />
 
         <activity android:name=".ChatActivity" />
         <activity android:name=".ChatListActivity" />

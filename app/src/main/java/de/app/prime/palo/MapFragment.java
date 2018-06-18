@@ -54,8 +54,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
-import java.util.Map;
+import java.util.List;
 
 
 /**
@@ -142,9 +143,24 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try {
                 onClickSendToDB.sendBtnClick(android_id, "2");
+
                 ChatMessage chatMessage = new ChatMessage();
                 chatMessage.isMessageThere3();
+
+
+
+                }catch(Exception e){
+
+                    e.getStackTrace();
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setTitle("Stacktrace");
+                    builder.setMessage(Arrays.toString(e.getStackTrace()));
+                    builder.show();
+                }
+
             }
         });
         TelephonyManager tManager = (TelephonyManager) getActivity().getSystemService(Context.TELEPHONY_SERVICE);

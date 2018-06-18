@@ -8,6 +8,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -396,10 +397,9 @@ public class ChatMessage {
         }
     }
 
-
     @SuppressLint("HardwareIds")
     public void isMessageThere3() {
-        System.out.println("res 3 ok");
+
         TelephonyManager telephonyManager = (TelephonyManager) MyApplicationContext.getAppContext().getSystemService(Context.TELEPHONY_SERVICE);
         if (ActivityCompat.checkSelfPermission(MyApplicationContext.getAppContext(), android.Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -416,6 +416,7 @@ public class ChatMessage {
         }
         new ResponseTask3().execute();
     }
+
 
     @SuppressLint("StaticFieldLeak")
     public class ResponseTask3 extends AsyncTask<Void, Void, Void> {

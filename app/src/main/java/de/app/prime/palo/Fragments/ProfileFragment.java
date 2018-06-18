@@ -99,9 +99,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.lang.reflect.Array;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Locale;
 
@@ -270,8 +272,8 @@ public class ProfileFragment extends Fragment {
         checkI20.check20();
 
         final UsernameJSON usernameJSON1 = new UsernameJSON();
-        final String name = usernameJSON1.getUserName();
-        tvUsername.setText(name);
+        final String[] name = {usernameJSON1.getUserName()};
+        tvUsername.setText(name[0]);
 
         // Receive status from database.
         GetStatusFromDB getStatusFromDB = new GetStatusFromDB();
@@ -314,8 +316,19 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MyApplicationContext.getAppContext(), ProfilActivity.class);
-                intent.putExtra("name", name);
-                startActivity(intent);
+                if(name[0] == null){
+                    UsernameJSON usernameJSON = new UsernameJSON();
+                    name[0] = usernameJSON.getUserName();
+                }
+                intent.putExtra("name", name[0]);
+                try {
+                    startActivity(intent);
+                }catch(Exception e){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(ProfileFragment.this.getActivity());
+                    builder.setTitle("ERROR");
+                    builder.setMessage(Arrays.toString(e.getStackTrace()));
+                    builder.show();
+                }
             }
         });
 
