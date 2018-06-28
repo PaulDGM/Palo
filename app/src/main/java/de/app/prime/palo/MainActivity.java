@@ -50,6 +50,7 @@ import de.app.prime.palo.GetFromDatabase.GetEncodedImageFromDB;
 import de.app.prime.palo.GetFromDatabase.GetUsernameFromDB;
 import de.app.prime.palo.IconsChecker.CheckI19;
 import de.app.prime.palo.IconsChecker.CheckI20;
+import de.app.prime.palo.IconsChecker.ComparePointsWithDB;
 
 
 
@@ -83,6 +84,10 @@ public class MainActivity extends AppCompatActivity
         locationsFromDB = new getLocFromDB(this);
         arrayListOtherUsers = locationsFromDB.getData();
 
+        PunkteJSON punkteJSON = new PunkteJSON();
+        punkteJSON.getPoints();
+
+
         System.out.println("DATA FROM DB: " + arrayListOtherUsers);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -109,9 +114,6 @@ public class MainActivity extends AppCompatActivity
             android_id = telephonyManager.getDeviceId();
         }
 
-
-
-
         View hView = navigationView.getHeaderView(0);
 
 
@@ -119,8 +121,8 @@ public class MainActivity extends AppCompatActivity
         navImageViewProfile = (ImageView) hView.findViewById(R.id.navImageViewProfile);
 
         // set username to navigation
-        GetUsernameFromDB getUsernameFromDB = new GetUsernameFromDB();
-        getUsernameFromDB.getResponseUsername(android_id, this);
+        GetUsernameFromDB getUsernameFromDB1 = new GetUsernameFromDB();
+        getUsernameFromDB1.getResponseUsername(android_id, this);
 
         // set profile image to navigation
         GetEncodedImageFromDB getEncodedImageFromDB = new GetEncodedImageFromDB();

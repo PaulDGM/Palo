@@ -12,9 +12,13 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import de.app.prime.palo.GetFromDatabase.GetPointsDB;
+import de.app.prime.palo.IconsChecker.ComparePointsWithDB;
+
 public class PunkteJSON {
     private static String fileName = "punkte.json";
-
+    int points = 0;
+    String old = "";
     private static void createNewDBDeleteOld(String nameJSON) {
         try {
             System.out.println("New created DB: " + nameJSON);
@@ -47,11 +51,12 @@ public class PunkteJSON {
 
     public void setPoints(int points){
 
-        String old = getData(MyApplicationContext.getAppContext());
+        old = getData(MyApplicationContext.getAppContext());
         System.out.println(old);
         try {
             if(old == null){
-                createNewDBDeleteOld("{ \"Points\" : ['1']}");
+
+                createNewDBDeleteOld("{ \"Points\" : ['"+points+"']}");
                 old = getData(MyApplicationContext.getAppContext());
             }
             JSONObject jsonObject = new JSONObject(old);
@@ -69,21 +74,39 @@ public class PunkteJSON {
     }
 
     public int getPoints(){
-        String old = getData(MyApplicationContext.getAppContext());
-        if(old == null){
-            createNewDBDeleteOld("{ \"Points\" : ['1']}");
-            old = getData(MyApplicationContext.getAppContext());
+        old = getData(MyApplicationContext.getAppContext());
+        if(old == null) {
+            UsernameJSON usernameJSON = new UsernameJSON();
+            String name = usernameJSON.getUserName();
+            GetPointsDB getPointsDB = new GetPointsDB();
+            getPointsDB.getPoints(this, name);
+        }else{
+            try {
+                JSONObject jsonObject =  new JSONObject(old);
+
+                JSONArray jsonArray = jsonObject.getJSONArray("Points");
+
+                points = Integer.parseInt(jsonArray.get(0).toString());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
-        int points = 0;
+        return points;
+    }
+
+    public void getPointsFromDB(int points1) {
+        createNewDBDeleteOld("{ \"Points\" : ['" + points1 + "']}");
+        old = getData(MyApplicationContext.getAppContext());
+
+        JSONObject jsonObject = null;
+        JSONArray jsonArray = null;
         try {
-            JSONObject jsonObject =  new JSONObject(old);
-
-            JSONArray jsonArray = jsonObject.getJSONArray("Points");
-
+            jsonObject = new JSONObject(old);
+            jsonArray = jsonObject.getJSONArray("Points");
             points = Integer.parseInt(jsonArray.get(0).toString());
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return points;
     }
+
 }

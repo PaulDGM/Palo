@@ -13,8 +13,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import de.app.prime.palo.Fragments.ProfileFragment;
+import de.app.prime.palo.IconsChecker.ComparePointsWithDB;
 import de.app.prime.palo.MainActivity;
 import de.app.prime.palo.MyApplicationContext;
+import de.app.prime.palo.PunkteJSON;
 import de.app.prime.palo.UsernameJSON;
 
 import java.util.HashMap;
@@ -29,6 +31,8 @@ public class GetUsernameFromDB {
     private TextView tvUsername;
     public String name;
     private GetUsernameTask getUsernameAsyncTask;
+    public GetPointsDB getPointsDB;
+    public PunkteJSON punkteJSON;
 
     public GetUsernameFromDB() {
 
@@ -45,9 +49,21 @@ public class GetUsernameFromDB {
     public String getName(){
         getUsernameAsyncTask = new GetUsernameTask();
         getUsernameAsyncTask.execute();
-
+        System.out.println("BIS HIER HIN KOMMT ES");
+        if(name == null){
+            name = "";
+        }
         return name;
     }
+
+    public void getNamePunkteJSON(GetPointsDB getPointsDB, PunkteJSON punkteJSON){
+        this.getPointsDB = getPointsDB;
+        this.punkteJSON = punkteJSON;
+        getUsernameAsyncTask = new GetUsernameTask();
+        getUsernameAsyncTask.execute();
+
+    }
+
 
     public void getResponseUsername(String android_id, MainActivity mainActivity) {
         this.android_id = android_id;
@@ -72,9 +88,14 @@ public class GetUsernameFromDB {
                         handleResponseProfile(response);
                         onPostExecute(null);
                     }
+                    if(getPointsDB != null){
+                        handleResponsePunkteJSON(response, getPointsDB, punkteJSON);
+                    }
                     else {
+
                         handleResponse(response);
                     }
+                    System.out.println("GETUSERNAME: " + response);
                 }
 
             }, new Response.ErrorListener() {
@@ -103,12 +124,24 @@ public class GetUsernameFromDB {
 
     private void handleResponse(String response) {
         getUsernameAsyncTask.cancel(true);
-        mainActivity.setUsernameInNav(response);
+        if(mainActivity != null) {
+            mainActivity.setUsernameInNav(response.trim());
+        }
+        UsernameJSON usernameJSON = new UsernameJSON();
+        System.out.println("RESPONSE FROM GET USERNAME: " + response.trim());
+        usernameJSON.setUserName(response.trim());
+        ComparePointsWithDB comparePointsWithDB = new ComparePointsWithDB();
+        comparePointsWithDB.compare();
     }
 
     private void handleResponseProfile(String response) {
         getUsernameAsyncTask.cancel(true);
         tvUsername.setText(response.trim());
+        UsernameJSON usernameJSON = new UsernameJSON();
+        usernameJSON.setUserName(response.trim());
+    }
+    public void handleResponsePunkteJSON(String response, GetPointsDB getPointsDB, PunkteJSON punkteJSON){
+        getPointsDB.getPoints(punkteJSON, response.trim());
         UsernameJSON usernameJSON = new UsernameJSON();
         usernameJSON.setUserName(response.trim());
     }

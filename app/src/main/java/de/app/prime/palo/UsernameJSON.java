@@ -52,10 +52,11 @@ public class UsernameJSON {
     public void setUserName(String username){
 
         String old = getData(MyApplicationContext.getAppContext());
-        System.out.println(old);
         try {
             if(old == null){
-                createNewDBDeleteOld("{ \"Name\" : ['Dummy']}");
+                GetUsernameFromDB getUsernameFromDB = new GetUsernameFromDB();
+                String name = getUsernameFromDB.getName();
+                createNewDBDeleteOld("{ \"Name\" : ['"+name+"']}");
                 old = getData(MyApplicationContext.getAppContext());
             }
             JSONObject jsonObject = new JSONObject(old);

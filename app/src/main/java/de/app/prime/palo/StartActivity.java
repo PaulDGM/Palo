@@ -189,6 +189,7 @@ public class StartActivity extends AppCompatActivity {
                         public void onClick(DialogInterface dialog, int which) {
                             if (res.equals("1")) {
                                 startMain();
+
                             } else {
                                 start();
                             }
@@ -207,12 +208,8 @@ public class StartActivity extends AppCompatActivity {
                     .show();
         }else{
             if (res.equals("1")) {
-
                 GetUsernameFromDB getUsernameFromDB = new GetUsernameFromDB();
-                String username = getUsernameFromDB.getName();
-                UsernameJSON usernameJSON = new UsernameJSON();
-                usernameJSON.setUserName(username);
-
+                getUsernameFromDB.getName();
                 startMain();
                 this.finish();
 

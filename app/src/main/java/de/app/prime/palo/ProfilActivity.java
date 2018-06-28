@@ -35,6 +35,7 @@ import java.util.ArrayList;
 
 import de.app.prime.palo.GetFromDatabase.GetPointsDB;
 import de.app.prime.palo.GetFromDatabase.GetProfilInfoFromDB;
+import de.app.prime.palo.IconsChecker.ComparePointsWithDB;
 import pl.droidsonroids.gif.GifTextView;
 
 public class ProfilActivity extends AppCompatActivity {
@@ -56,6 +57,9 @@ public class ProfilActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profil);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        ComparePointsWithDB comparePointsWithDB = new ComparePointsWithDB();
+        comparePointsWithDB.compare();
 
         Serializable k = getIntent().getSerializableExtra("name");
         name = k.toString();
@@ -91,8 +95,7 @@ public class ProfilActivity extends AppCompatActivity {
         ivImage.setLayoutParams(layoutImageView);
         String image = list.get(0);
 
-        GetPointsDB getPointsDB = new GetPointsDB();
-        getPointsDB.getPoints(this, name);
+        setPointsAndWidth();
 
 
         if(image != null && image.length() > 0) {
@@ -458,9 +461,9 @@ public class ProfilActivity extends AppCompatActivity {
 
     }
 
-    public void setPointsAndWidth(String pointsStr){
-        pointsStr = pointsStr.trim();
-        points = Integer.parseInt(pointsStr);
+    public void setPointsAndWidth(){
+        PunkteJSON punkteJSON = new PunkteJSON();
+        points = punkteJSON.getPoints();
         LevelPointsConverter levelPointsConverter = new LevelPointsConverter();
         lvl = levelPointsConverter.convertPointsToLevel(points);
         txtView.setText(String.valueOf("   Level: "+lvl+ " // Punkte: " + points));
@@ -493,7 +496,7 @@ public class ProfilActivity extends AppCompatActivity {
             y = 99;
         }if(lvl == "7"){
             //200-499
-            x = 300;
+            x = 200;
             y = 199;
         }if(lvl == "8"){
             //500-999
