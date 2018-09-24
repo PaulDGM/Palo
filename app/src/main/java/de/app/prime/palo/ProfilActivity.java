@@ -216,7 +216,7 @@ public class ProfilActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             AlertDialog.Builder alert = new AlertDialog.Builder(ProfilActivity.this, android.R.style.Theme_Material_Dialog_Alert);
-                            alert.setMessage("Sophisticated Poster - Post a status from your profile and directly from the mapb");
+                            alert.setMessage("Sophisticated Poster - Post a status from your profile and directly from the map");
                             alert.setPositiveButton("Ok", null);
                             alert.show();
                         }
