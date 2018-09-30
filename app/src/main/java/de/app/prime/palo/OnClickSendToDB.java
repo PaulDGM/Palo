@@ -11,10 +11,6 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Win10 Home x64 on 17.02.2018.
- */
-
 public class OnClickSendToDB {
 
     private static final String URL = "http://palo.square7.ch/setOnClickInDBGami.php";

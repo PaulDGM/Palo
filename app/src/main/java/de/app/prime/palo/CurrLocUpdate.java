@@ -1,9 +1,6 @@
 package de.app.prime.palo;
 
 
-
-import android.*;
-import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -23,9 +20,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import de.app.prime.palo.Fragments.ProfileFragment;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
@@ -38,7 +33,7 @@ import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.google.android.gms.tasks.OnSuccessListener;
 
-
+import de.app.prime.palo.Fragments.ProfileFragment;
 
 import static com.google.android.gms.plus.PlusOneDummyView.TAG;
 

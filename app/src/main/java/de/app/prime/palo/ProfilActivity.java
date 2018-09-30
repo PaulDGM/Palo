@@ -1,8 +1,5 @@
-
-
 package de.app.prime.palo;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -15,25 +12,15 @@ import android.util.Base64;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
-import android.widget.TableLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import de.app.prime.palo.GetFromDatabase.GetPointsDB;
-import de.app.prime.palo.GetFromDatabase.GetProfilInfoFromDB;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import de.app.prime.palo.GetFromDatabase.GetPointsDB;
 import de.app.prime.palo.GetFromDatabase.GetProfilInfoFromDB;
 import de.app.prime.palo.IconsChecker.ComparePointsWithDB;
 import pl.droidsonroids.gif.GifTextView;
